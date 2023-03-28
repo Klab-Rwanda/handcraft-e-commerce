@@ -1,0 +1,25 @@
+.vender-profile{
+    display: flex;
+    flex-direction: row;
+    gap: 0.3%;
+    width: 250px;
+    height: 100px;
+    margin: 20px;
+    font-size: 12px;
+    .vender-profile-img{
+        width: 47%;
+        height: 100%;
+        img{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+    }
+    .vender-profile-info{
+        width: 50%;
+        height: 100%;
+    
+       
+
+    }
+}
