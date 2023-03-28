@@ -47,6 +47,16 @@ width: 100%;
 @media screen AND (max-width: 1040px){
 
 }
+#About-contact{
+width: 150px;
+  height: 40px;
+  color: white;
+  background-color: lightseagreen;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+  margin-top: 2rem;
+}
 
 /* Small-mobile responsiveness */
 
