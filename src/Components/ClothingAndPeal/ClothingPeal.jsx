@@ -4,6 +4,7 @@ import { MdArrowRightAlt } from "react-icons/md";
 import { FaCartPlus } from "react-icons/fa";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 import APEAL from '../../assets/appeal.jpg';
 import ING from '../../assets/ingo.jpg';
 const ClothingPeal = () => {
@@ -40,17 +41,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+              <li>
+               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+             </li>
+            <li>
+             <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+          </li>
+            <li>
+           <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+           </li>
+              </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -69,17 +70,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+              <li>
+                 <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+               </li>
+                 <li>
+              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+               </li>
+              <li>
+              <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+              </li>
+              </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -98,17 +99,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+                 <li>
+                <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+              </li>
+                <li>
+               <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+               </li>
+               <li>
+                 <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+               </li>
+              </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -127,17 +128,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+               <li>
+                <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+              </li>
+              <li>
+              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+              </li>
+              <li>
+              <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+              </li>
+              </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -156,17 +157,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+               <li>
+                <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+               </li>
+              <li>
+              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+               </li>
+             <li>
+              <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+             </li>
+             </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -185,17 +186,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+               <li>
+               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+             </li>
+              <li>
+              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+             </li>
+            <li>
+             <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+            </li>
+             </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -214,17 +215,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+              <li>
+               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+              </li>
+              <li>
+              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+            </li>
+              <li>
+             <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+            </li>
+             </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
@@ -243,17 +244,17 @@ const ClothingPeal = () => {
             <div className="proCards">
               <img src={ING} alt="" />
               <div className="overview">
-                <ul>
-                  <li>
-                    <FaCartPlus className="iconx" />
-                  </li>
-                  <li>
-                    <AiOutlineHeart className="iconx" />
-                  </li>
-                  <li>
-                    <HiOutlineArrowNarrowRight className="iconx" />
-                  </li>
-                </ul>
+              <ul>
+              <li>
+               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+              </li>
+              <li>
+              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
+            </li>
+              <li>
+             <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
+            </li>
+             </ul>
               </div>
               <div className="proDetails">
                 <h3>Classic hat</h3>
