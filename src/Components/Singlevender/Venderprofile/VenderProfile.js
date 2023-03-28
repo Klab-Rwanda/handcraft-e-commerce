@@ -4,6 +4,7 @@ import './VenderProfile.css'
 const VenderProfile = () => {
   return (
     <>
+    <h1 className='vender-profile-title'> Profile</h1>
     <div className='vender-profile'>
         <div className='vender-profile-img'>
         <img src={'Home/jordan.jpg'} alt=""/>
