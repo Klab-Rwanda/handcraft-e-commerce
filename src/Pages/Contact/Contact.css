@@ -1,0 +1,18 @@
+.contact-footer{
+    margin-top: 2rem;
+}
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+.site-footer{
+  margin-top:8rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.site-footer{
+  margin-top:3rem;
+}
+} 
