@@ -4,6 +4,7 @@ import Header from '../../Components/Home/Header/Header'
 import SubHeader from '../../Components/Home/SubHeader/SubHeader'
 import Footer from '../../Components/Home/Footer/Footer'
 import CategoliesNav from '../../Components/CategoliesNav/CategoliesNav'
+import VenderProfile from '../../Components/Singlevender/Venderprofile/VenderProfile'
 
 
 const Singlevender = () => {
@@ -12,7 +13,10 @@ const Singlevender = () => {
       <Header />
       <SubHeader />
       <div className='Singlevender-body'>
-      <div> <CategoliesNav/> </div>
+      <div>
+         <VenderProfile/>
+         <CategoliesNav/> 
+         </div>
        <div> right side</div>
        </div>
        <Footer/>
