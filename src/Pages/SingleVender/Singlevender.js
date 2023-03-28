@@ -17,7 +17,7 @@ const Singlevender = () => {
          <VenderProfile/>
          <CategoliesNav/> 
          </div>
-       <div> right side</div>
+       <div> <Singlevender/></div>
        </div>
        <Footer/>
        </>
