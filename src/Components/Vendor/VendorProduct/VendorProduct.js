@@ -1,15 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./VendorProduct.css";
 import { FaSearch } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import product from "../VendorProduct/product1.png";
 import { useForm } from "react-hook-form";
 import axios from "../../Axios/axios";
+import { AuthContext } from "../../context/AuthProvider";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+ 
 
 const VendorProduct = () => {
   const [modal, setModal] = useState(false);
+  const [selected, setSelected] = useState(null);
+  const { products } = useContext(AuthContext);
 
-const { register, handleSubmit, reset } = useForm();
+const { register, handleSubmit, reset } = useForm({
+  defaultValues:{
+ productName:selected? selected.productName:"",
+ productDescription: selected? selected.productDescription:"",
+  productCategory: selected? selected.productCategory:"",
+  productImage: selected? selected.productImage:"",
+  productPrice: selected? selected.productPrice:"",
+ productTag:selected? selected.productTag:"",
+ productDiscount: selected? selected.productDiscount:""
+
+
+
+  }
+});
+useEffect (()=>{
+  reset(selected)
+},[selected])
+
+console.log(products);
+
+
+
+
 const onSubmit = async (data) => {
   const formData = new FormData();
   formData.append("productName", data.productName);
@@ -27,24 +54,65 @@ const onSubmit = async (data) => {
 
 
   try {
-  const response = await axios.post(
-      "products/create",
-      formData,
-      {
-        headers: {
-          "content-Type": "multipart/form-data",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-      
-    );
-    console.log(response);
+    if(selected){
+    const response = await axios.put (`products/update/${selected.id}`, formData, {
+      headers: {
+        "content-Type": "multipart/form-data",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+  console.log(response);
+
+  alert("post successfully");
+  reset();
+    }else{
+
+     const response = await axios.post("products/create", formData, {
+       headers: {
+         "content-Type": "multipart/form-data",
+         Authorization: `Bearer ${localStorage.getItem("token")}`,
+       },
+     });
     
+
+
+  console.log(response);
+
+  alert("post successfully");
+  reset();
+
+
+    }
    
-    // alert("post successfully");
-    // reset();
+
+ 
   } catch (error) {
     console.log(error.response);
+  }
+};
+
+ const getSingle = async (id) => {
+   const selectedProduct = product.find((product) => product.id === id);
+   setSelected(selectedProduct);
+   reset();
+   console.log(selectedProduct);
+ };
+ useEffect(() => {
+   reset(selected);
+ }, [selected]);
+
+ const handleDelete = async (id) => {
+   try {
+     await axios.delete( `products/delete/${id}`,{
+
+       headers: {
+         "content-Type": "multipart/form-data",
+        },
+      }
+      );
+      window.location.reload(true);
+   } catch (error) {
+      console.log(error.response);
   }
 };
 
@@ -126,59 +194,52 @@ const onSubmit = async (data) => {
             <tr className="ptr">
               <th>Image</th>
               <th>PName</th> <th>Category</th>
+              <th>Description</th>
+             
               <th>Price</th>
-              <th>Stock</th>
-              <th>Sold</th>
-              <th>Earings</th> <th>Actions</th>
+              <th>Discount</th> <th>Actions</th>
             </tr>
+{
+  products?.map(product =>{
+    return (
+      <tr>
+        <td>
+          <img
+            src={product.productImage}
+            alt="pimage"
+            className="img-min"
+          ></img>
+        </td>
+        <td>
+          <p>{product.productName}</p>
+        </td>
+        <td>{product.productCategory}</td> <td>{product.productDescription}</td>{" "}
+        <td>{product.productPrice}</td> <td>{product.productDiscount}</td>
+        <td>
+          <AiFillEdit
+            className="edit-icn"
+            onClick={() => {
+              setModal(true);
+              setSelected(product)
+              if (window.confirm("are you sure to edit this?")) {
+                getSingle(product.id);
+              }
+            }}
+          />
+          <AiFillDelete
+            className="delete-icn"
+            onClick={() => {
+              if (window.confirm("are you sure to delete this?")) {
+                handleDelete(product.id);
+              }
+            }}
+          />
+        </td>
+      </tr>
+    );
+  })
+}
 
-            <tr>
-              <td>
-                <img src={product} alt="pimage" className="img-min"></img>
-              </td>
-              <td>
-                <p>skirt</p>
-              </td>
-              <td>Women</td> <td>$200</td> <td>20</td> <td>10</td>
-              <td>2000</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <img src={product} alt="pimage" className="img-min"></img>
-              </td>
-              <td>
-                <p>skirt</p>
-              </td>
-              <td>Women</td> <td>$200</td> <td>20</td> <td>10</td>
-              <td>2000</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <img src={product} alt="pimage" className="img-min"></img>
-              </td>
-              <td>
-                <p>skirt</p>
-              </td>
-              <td>Women</td> <td>$200</td> <td>20</td> <td>10</td>
-              <td>2000</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <img src={product} alt="pimage" className="img-min"></img>
-              </td>
-              <td>
-                <p>skirt</p>
-              </td>
-              <td>Women</td> <td>$200</td> <td>20</td> <td>10</td>
-              <td>2000</td>
-              <td>:</td>
-            </tr>
           </table>
         </div>
 
