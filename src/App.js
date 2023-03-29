@@ -30,7 +30,7 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Singlevender from './Pages/SingleVender/Singlevender';
 import Payment from './Pages/Payment/Payment';
-
+import SingleProductview from './Pages/SingleProductview/SingleProductview';
 
 const App = () => {
 
@@ -52,7 +52,7 @@ const App = () => {
           <Route path="Contact" element={<Contact />} />
           <Route path="Payment" element={<Payment/>} />
           <Route path="Singlevender" element={<Singlevender />} />
-
+          <Route path="SingleProductview" element={<SingleProductview/>} />
           <Route index element={<Home />} />
           <Route />
           <Route
