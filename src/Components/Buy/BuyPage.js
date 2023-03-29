@@ -23,7 +23,7 @@ const BuyPage = () => {
           <AiFillStar className="buy-rate" />
           <AiFillStar className="buy-rate" />
           <AiFillStar className="buy-rate" />
-          <AiFillStar className="buy-rate" /></h2>
+          <AiFillStar className="buy-rate" /> (1 review)</h2>
           <div className="buy-sect1-part2-text-btn1">
             <p>SIZE</p>
             <button> XLarge</button>
