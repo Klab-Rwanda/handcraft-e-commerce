@@ -3,69 +3,51 @@ import { useRef,useState,useEffect,useContext }  from "react";
 import { useNavigate} from "react-router-dom";
 import { Link } from "react-router-dom";
 // import AuthContext from "../../components/context/AuthProvider";
-import axios from "axios";
+
+import SubHeader from "../../Home/SubHeader/SubHeader";
+import Header from "../../Home/Header/Header";
+import Footer from "../../Home/Footer/Footer";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { AuthContext } from "../../context/AuthProvider";
+import axios from "../../Axios/axios";
 const LOGIN_URL = "https://madeinapi.onrender.com/api/zeus/users/login";
 
 
-
+const schema = yup.object().shape({
+  email: yup.string().required(),
+  password: yup.string().required(),
+});
 
 export default function Login() {
-  const navigate = useNavigate()
+  
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
   // const {setAuth} = useContext(AuthContext);
-const userRef = useRef();
-const errRef = useRef();
-const [email,setEmail] = useState ('');
-const [password,setPassword]= useState('');
 
-const [errMsg,setErrMsg] = useState ('');
-const [success,setSuccess] = useState(false);
+ const {loggedUser}= useContext(AuthContext);
+ console.log(loggedUser);
 
 
- const handleSubmit = async (e) =>{
-  e.preventDefault(); 
+ const onSubmit = async (data) =>{
+  
 try{
-  const response = await axios.post(LOGIN_URL,
-    JSON.stringify({email, password}),{
-    headers: {'content-Type' :'application/json'},
-   
-    }
-  ); 
-  console.log(JSON.stringify(response?.data));
-  console.log(JSON.stringify(response));
+  const response = await axios.post("users/login",data); 
   const accessToken = response?.data?.token;
   localStorage.setItem('token',accessToken);
-  // setAuth ({email,password,accessToken});
-setEmail ('');
-  setPassword('');
-  setSuccess(true);
-  navigate (
-    "/VendorDashboard"
-  )
-
-
-
-
-
-
+   window.location.reload(true);
+  console.log(response);
+   
   
     }
 catch (err){
-if(!err?.response){
-  setErrMsg('no server response');
-
-}
-else if(err.response?.status ===400){
-  setErrMsg('missing username or password');
-  console.log(email,password)
-}
-else if(err.response?.status === 401){
-  setErrMsg('unauthorized');
-} else{
-  setErrMsg ('Login Failed');
-}
-errRef.current.focus();
-   
-
+console.log(err.response);
 }
   
 
@@ -73,71 +55,45 @@ errRef.current.focus();
  }
 
 
+
   return (
     <>
-    {success?(
-  <section>
-    <p>
-    <Link className="link" to="/Dashbord">
-   you are logged in 
-    go to dashbord
-     
-    </Link>
-    </p>
-  </section>
-   ) : ( 
+      <Header />
+      <SubHeader />
 
-
-
-
-
-    <div className="loginn">
-    <p ref={errRef} className={errMsg ? "errmsg":"offscreen"} aria-alive="assertive"> {errMsg}</p> 
-      <div className="bor">
-        <div className="login">
-      <span className="loginTitle">Login</span>
-      <form className="loginForm" onSubmit={handleSubmit} >
-        <label>Email</label>
-        <input className="loginInput" 
-        type="text" 
-        id="username"
-        ref={userRef}
-        autoComplete="off"
-        onChange={(e)=> setEmail(e.target.value)}
-        value={email}
-        placeholder="Enter your email..."
-        
-        
-        />
-        <label>Password</label>
-        <input className="loginInput" 
-        type="password" 
-        id="Password"
-        ref={userRef}
-        autoComplete="off"
-        onChange={(e)=> setPassword(e.target.value)}
-        value={password}
-        placeholder="Enter your password..."
-        
-        
-        />
-        <button className="loginButton">
-        {/* <Link className="link" to="/vendorDashboard"> */}
-          Login
-          {/* </Link> */}
-          </button>
-       <p>
-     <Link className="link" to="/AdminDashboard">
- Don't have Account Register Here !
-          </Link>
-          </p>
-        
-        
-        </form>
+      <div className="loginn">
+        <div className="bor">
+          <div className="login">
+            <span className="loginTitle">Login</span>
+            <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
+              <label>Email</label>
+              <input
+                className="loginInput"
+                type="text"
+                {...register("email")}
+               
+                placeholder="Enter your email..."
+              />
+              <span>{errors?.email?.message}</span>
+              <label>Password</label>
+              <input
+                className="loginInput"
+                type="password"
+                {...register("password")}
+                placeholder="Enter your password..."
+              />
+              <span>{errors?.password?.message}</span>
+              <button className="loginButton">Login</button>
+              <p>
+                <Link className="link" to="/AdminDashboard">
+                  Don't have Account Register Here !
+                </Link>
+              </p>
+            </form>
+          </div>
         </div>
-        </div>
-    </div>
- )} 
+      </div>
+      <Footer />
     </>
   );
 }

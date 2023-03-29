@@ -1,56 +1,61 @@
-import React from 'react'
-import './App.css';
-import { BrowserRouter, Routes, Route, Outlet }  from 'react-router-dom';
-import Home  from './Pages/Home'
-import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
-import AdminUsers from './Pages/AdminUsers/AdminUsers';
-import AdminSideBar from './Components/Admin/AdminSidebar/AdminSideBar';
-import VendorSidebar from './Components/Vendor/VendorSidebar/VendorSidebar';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Home from "./Pages/Home";
+import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
+import AdminUsers from "./Pages/AdminUsers/AdminUsers";
+import AdminSideBar from "./Components/Admin/AdminSidebar/AdminSideBar";
+import VendorSidebar from "./Components/Vendor/VendorSidebar/VendorSidebar";
 import Product from "./Pages/VendorDashboard/Product";
-import Adminallproducts from './Pages/AdminProducts/Adminallproducts';
-import Adminsellerdetail from './Pages/AdminsellerDetail/Adminsellerdetail';
-import Adminsales from './Pages/AdminSales/Adminsales';
-import AdminLogout from './Pages/Adminlogout/AdminLogout';
-import VendorDashboard from './Components/Vendor/vendorDashboard/vendorDashboard';
-import Sales from './Pages/VendorDashboard/Sales';
-import Order from './Pages/VendorDashboard/Order';
-import Transition from './Pages/VendorDashboard/Transition';
-import Setting from './Pages/VendorDashboard/Setting';
-import Shop from './Pages/Shop/Shop';
-import Vender from './Pages/Vender/Vender'
+import Adminallproducts from "./Pages/AdminProducts/Adminallproducts";
+import Adminsellerdetail from "./Pages/AdminsellerDetail/Adminsellerdetail";
+import Adminsales from "./Pages/AdminSales/Adminsales";
+import AdminLogout from "./Pages/Adminlogout/AdminLogout";
+import VendorDashboard from "./Components/Vendor/vendorDashboard/vendorDashboard";
+import Sales from "./Pages/VendorDashboard/Sales";
+import Order from "./Pages/VendorDashboard/Order";
+import Transition from "./Pages/VendorDashboard/Transition";
+import Setting from "./Pages/VendorDashboard/Setting";
+import Shop from "./Pages/Shop/Shop";
+import Vender from "./Pages/Vender/Vender";
 
-import Login from './Components/Forms/login/Login';
-import Register from './Components/Forms/register/Register';
+import Login from "./Components/Forms/login/Login";
+import Register from "./Components/Forms/register/Register";
 
-import Cart from './Pages/Cart/Cart';
-import Wishlist from './Pages/Wishlist/Wishlist'
-import Buy from './Pages/Buy/Buy'
-import {useState} from "react";
-import About from './Pages/About/About';
-import Contact from './Pages/Contact/Contact';
-import Singlevender from './Pages/SingleVender/Singlevender';
-
+import Cart from "./Pages/Cart/Cart";
+import Wishlist from "./Pages/Wishlist/Wishlist";
+import Buy from "./Pages/Buy/Buy";
+import { useState } from "react";
+import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
+import Singlevender from "./Pages/SingleVender/Singlevender";
+import ProtectAuthentication from "./Components/context/ProtectAuthentication";
 
 const App = () => {
-
   const [sider, setSider] = useState(false);
   return (
     <>
       <BrowserRouter>
         <Routes>
-
           <Route path="/" element={<Home />} />
           <Route path="Shop" element={<Shop />} />
           <Route path="Vender" element={<Vender />} />
 
-          <Route path="Login" element={<Login />} />
+          <Route
+            path="Login"
+            element={
+              <ProtectAuthentication>
+                <Login />
+              </ProtectAuthentication>
+            }
+          />
           <Route path="Signup" element={<Register />} />
           <Route path="Buy" element={<Buy />} />
           <Route path="Cart" element={<Cart />} />
           <Route path="Wishlist" element={<Wishlist />} />
           <Route path="About" element={<About />} />
-          <Route path="Contact" element={<Contact/>} />
-           <Route path="Singlevender" element={<Singlevender/>}/>
+          <Route path="Contact" element={<Contact />} />
+          <Route path="Singlevender" element={<Singlevender />} />
 
           <Route index element={<Home />} />
           <Route />
@@ -96,11 +101,6 @@ const App = () => {
       </BrowserRouter>
     </>
   );
-}
+};
 
-export default App
-
-
-
-
-
+export default App;

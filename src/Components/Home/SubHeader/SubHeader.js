@@ -21,8 +21,8 @@ import {GoLocation} from 'react-icons/go'
 const SubHeader = () => {
   return (
     <>
-   <div className='nav-page'>
-    {/* <section className='subHeader' >
+      <div className="nav-page">
+        {/* <section className='subHeader' >
         <div className='subheader-sect1'>
         <img src="Madein.PNG" alt='our log'/>
         </div>
@@ -105,28 +105,28 @@ const SubHeader = () => {
     
      </div> */}
 
-<div className="container search">
+        <div className="container search">
           <div className="icon_header">
-          <img src="Madein.PNG" alt='our log'/>
+            <img src="Madein.PNG" alt="our log" />
           </div>
           <div className="input_search">
-          <select>
-          <option value="option1"> categories </option>
-          <option value="option2">FASHION</option>
-          <option value="option3">Made in rwanda</option>
-          <option value="option3">Sport</option>
-          <option value="option3">Electronics</option>
-          <option value="option3">Home and garden</option>
-          <option value="option3">Health and beauty</option>
-          <option value="option3">Toys and hobbies</option>
-          <option value="option3">Automotive</option>
-          <option value="option3">Baby and kids</option>
-          <option value="option3">Books and stationery</option>
-          <option value="option3">Food and drinks</option>
-          <option value="option3">Pets</option>
-          <option value="option3">Travel</option>
-          <option value="option3">Other</option>
-        </select>
+            <select>
+              <option value="option1"> categories </option>
+              <option value="option2">FASHION</option>
+              <option value="option3">Made in rwanda</option>
+              <option value="option3">Sport</option>
+              <option value="option3">Electronics</option>
+              <option value="option3">Home and garden</option>
+              <option value="option3">Health and beauty</option>
+              <option value="option3">Toys and hobbies</option>
+              <option value="option3">Automotive</option>
+              <option value="option3">Baby and kids</option>
+              <option value="option3">Books and stationery</option>
+              <option value="option3">Food and drinks</option>
+              <option value="option3">Pets</option>
+              <option value="option3">Travel</option>
+              <option value="option3">Other</option>
+            </select>
             <input type="text" placeholder="Search In" />
             <span className="searchIcon">
               <BiSearch />
@@ -139,45 +139,49 @@ const SubHeader = () => {
             </div>
             <div className="cwcontainer">
               <div className="cart">
-              <span>
-                  <Link to='/Wishlist'><AiOutlineHeart /></Link>
+                <span>
+                  <Link to="/Wishlist">
+                    <AiOutlineHeart />
+                  </Link>
                 </span>
                 <small>Wishlist</small>
               </div>
               <div className="cart">
                 <span>
-                <Link to='/Cart'><HiShoppingCart /></Link>
+                  <Link to="/Cart">
+                    <HiShoppingCart />
+                  </Link>
                 </span>
                 <small>Cart</small>
               </div>
             </div>
           </div>
         </div>
-    </div>
-    <div className="navBar">
+      </div>
+      <div className="navBar">
         <div className="container subNav">
           <div className="categories">
             <span>
               <AiOutlineBars />
             </span>
             <div className="pdetails">
-            <select className='subheader-select2'>
-               <option value="option1"> categories </option>
-               <option value="option2">FASHION</option>
-               <option value="option3">Made in rwanda</option>
-               <option value="option3">Sport</option>
-               <option value="option3">Electronics</option>
-               <option value="option3">Home and garden</option>
-               <option value="option3">Health and beauty</option>
-               <option value="option3">Toys and hobbies</option>
-               <option value="option3">Automotive</option>
-               <option value="option3">Baby and kids</option>
-               <option value="option3">Books and stationery</option>
-               <option value="option3">Food and drinks</option>
-               <option value="option3">Pets</option>
-               <option value="option3">Travel</option>
-               <option value="option3">Other</option>
-          </select>
+              <select className="subheader-select2">
+                <option value="option1"> categories </option>
+                <option value="option2">FASHION</option>
+                <option value="option3">Made in rwanda</option>
+                <option value="option3">Sport</option>
+                <option value="option3">Electronics</option>
+                <option value="option3">Home and garden</option>
+                <option value="option3">Health and beauty</option>
+                <option value="option3">Toys and hobbies</option>
+                <option value="option3">Automotive</option>
+                <option value="option3">Baby and kids</option>
+                <option value="option3">Books and stationery</option>
+                <option value="option3">Food and drinks</option>
+                <option value="option3">Pets</option>
+                <option value="option3">Travel</option>
+                <option value="option3">Other</option>
+              </select>
               <span>
                 <MdKeyboardArrowDown />
               </span>
@@ -185,10 +189,18 @@ const SubHeader = () => {
           </div>
           <div className="links">
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/Shop'>Shop</Link></li>
-              <li><Link to='/Vender'>Vendor</Link></li>
-              <li>About us</li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/Shop">Shop</Link>
+              </li>
+              <li>
+                <Link to="/Vender">Vendor</Link>
+              </li>
+              <li>
+                About us
+              </li>
             </ul>
           </div>
           <div className="trackOrders">
@@ -208,7 +220,7 @@ const SubHeader = () => {
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default SubHeader

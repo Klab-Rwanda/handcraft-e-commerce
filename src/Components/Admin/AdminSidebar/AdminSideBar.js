@@ -41,9 +41,17 @@ const AdminSideBar = ({sider}) => {
           <TbTransitionBottom className="D-icon" id="icons" />
           <h1 className="side-menu-text-h1">Sales</h1>
         </Link>
-        <Link to="/" className="side-menu-single">
+        <Link to="" className="side-menu-single">
           <RiLogoutBoxFill className="D-icon" id="icons" />
-          <h1 className="side-menu-text-h1">Logout</h1>
+          <h1
+            className="side-menu-text-h1"
+            onClick={() => {
+              localStorage.removeItem("token");
+              window.location.href = "/Login";
+            }}
+          >
+            Logout
+          </h1>
         </Link>
       </div>
     </div>
