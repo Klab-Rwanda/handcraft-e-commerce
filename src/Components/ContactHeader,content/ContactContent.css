@@ -81,6 +81,9 @@
 }
 /* Tablet responsiveness */
 @media screen AND (max-width: 1040px){
+  .main-footer{
+  margin-top:1rem;
+}
 
 }
 
@@ -98,5 +101,8 @@
 .contact-leftside{
     border: black 1px solid;
     width: 90%;
+}
+.main-footer{
+  margin-top:3rem;
 }
 } 

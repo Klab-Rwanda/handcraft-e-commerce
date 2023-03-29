@@ -84,7 +84,7 @@
 /* Small-mobile responsiveness */
 
 @media screen AND (max-width: 480px){
-.site-footer{
-  margin-top:195rem;
+.main-footer{
+  margin-top:193rem;
 }
 } 
