@@ -25,11 +25,11 @@ const BuyPage = () => {
           <AiFillStar className="buy-rate" />
           <AiFillStar className="buy-rate" /> (1 review)</h2>
           <div className="buy-sect1-part2-text-btn1">
-            <p>SIZE</p>
-            <button> XLarge</button>
-            <button> Large</button>
-            <button> Medium</button>
-            <button> Small</button> 
+           <div> <p>SIZE</p> </div>
+           <div> <button> XLarge</button> </div>
+           <div> <button> Large</button> </div>
+           <div> <button> Medium</button> </div>
+           <div> <button> Small</button> </div>
           </div>
           <div className="buy-sect1-part2-text-btn2">
           <button> Add to Cart</button>
