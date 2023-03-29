@@ -2,7 +2,9 @@ import React from 'react'
 
 const SingleProductview = () => {
   return (
-    <div>Single Product view</div>
+    <div>
+        <SingleProductview/>
+    </div>
   )
 }
 
