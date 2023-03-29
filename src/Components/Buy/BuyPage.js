@@ -7,8 +7,9 @@ const BuyPage = () => {
     <>
     <div className="buy-sect1">
       <div className='buy-sect1-part1'>
-        <img src={'/Home/jordan.jpg'} alt="jordan" />
-        <img src={'/Home/jordan.jpg'} alt="jordan" />
+        <h1> Other view of Product</h1>
+        <img src={'/Home/jordan.jpg'} alt="jordan" /> 
+        <img src={'/Home/jordan.jpg'} alt="jordan" /> 
         <img src={'/Home/jordan.jpg'} alt="jordan" />
       </div>
       <div className='buy-sect1-part2'>

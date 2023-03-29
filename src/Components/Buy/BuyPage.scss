@@ -6,11 +6,16 @@
     gap: 20px;
     .buy-sect1-part1{
         width: 15%;
-        dispaly: flex;
+        display: flex;
         flex-direction: column;
+        h1{
+            font-weight: bold;
+            text-align: center;
+        }
         img{
-            width: 80px;
-            height: 150px;
+            width: 100%;
+            height: 100px;
+            margin: 10px;
         }
     }
     .buy-sect1-part2{
@@ -28,5 +33,7 @@
     }
     .buy-sect1-part3{
         width: 20%;
+        border: 1px solid black;
+        height: auto;
     }
 }
