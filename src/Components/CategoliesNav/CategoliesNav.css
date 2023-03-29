@@ -1,21 +1,17 @@
 .categolies-nav {
   margin-left: 5px;
   overflow-x: hidden;
-  color: black;
+  cursor: pointer;
 }
 .categolies-nav button {
   border: none;
 }
-.categolies-nav ul {
+.categolies-nav .categolies-nav-list {
+  display: flex;
+  flex-direction: column;
   font-size: 16px;
-  margin-left: 10px;
-  font-weight: 20;
-  cursor: pointer;
+  font-weight: 500;
 }
-.categolies-nav ul li {
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-.categolies-nav ul :hover {
+.categolies-nav .categolies-nav-list :hover {
   color: #00aeff;
 }/*# sourceMappingURL=CategoliesNav.css.map */

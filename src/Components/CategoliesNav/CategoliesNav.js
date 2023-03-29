@@ -22,22 +22,22 @@ const CategoliesNav = () => {
   return (
     <div className='categolies-nav'>
       <h1>Categolies</h1>
-      <ul>
-       <li> <IoShirtOutline/>  Fashion</li>
-       <li><SiCultura/>  Made in rwanda</li>
-       <li><MdSportsHandball/>  Sport</ li>
-       <li><MdOutlineElectricScooter/>Electronics</li>
-       <li><BiHomeSmile/>  Home and garden</li>
-       <li>Health and beauty</li>
-       <li><BiBasketball/>  Toys and hobbies</li>
-       <li><FaMotorcycle/>  Automotive</li>
-       <li><MdBabyChangingStation/>  Baby and kids</li>
-       <li><BsBook/>  Books and stationery</li>
-       <li><IoFastFoodOutline/>  Food and drinks</li>
-       <li><MdPets/>  Pets</li>
-       <li><MdCardTravel/>  Travel</li>
-       <li><MdDevicesOther/>  Other</li>    
-      </ul>
+      <div className='categolies-nav-list'>
+       <div> <IoShirtOutline/>  Fashion</div>
+       <div><SiCultura/>  Made in rwanda</div>
+       <div><MdSportsHandball/>  Sport</ div>
+       <div><MdOutlineElectricScooter/>Electronics</div>
+       <div><BiHomeSmile/>  Home and garden</div>
+       <div>Health and beauty</div>
+       <div><BiBasketball/>  Toys and hobbies</div>
+       <div><FaMotorcycle/>  Automotive</div>
+       <div><MdBabyChangingStation/>  Baby and kids</div>
+       <div><BsBook/>  Books and stationery</div>
+       <div><IoFastFoodOutline/>  Food and drinks</div>
+       <div><MdPets/>  Pets</div>
+       <div><MdCardTravel/>  Travel</div>
+       <div><MdDevicesOther/>  Other</div>    
+      </div>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {BiUserCircle} from 'react-icons/bi'
 import './Header.css'
 
 
@@ -12,9 +11,6 @@ const Header = () => {
             <div className="Nav-register">
               <ul>
                 <li>
-                  <span>
-                    <BiUserCircle id="user-logo" />
-                  </span>
                   <Link to='./Login'>signIn</Link>
                 </li>
                 <li>/</li>
