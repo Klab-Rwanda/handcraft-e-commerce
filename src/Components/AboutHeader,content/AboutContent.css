@@ -48,7 +48,7 @@ width: 100%;
 
 }
 #About-contact{
-width: 150px;
+  width: 150px;
   height: 40px;
   color: white;
   background-color: lightseagreen;
@@ -112,5 +112,8 @@ margin-left:2.5rem;
 #para2{
    width: 80%;
     margin-left:2.5rem; 
+}
+.main-footer{
+  margin-bottom:5rem;
 }
 } 
