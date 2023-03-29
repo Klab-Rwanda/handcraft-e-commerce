@@ -17,9 +17,6 @@ const Nav = () => {
             <div className="Nav-register">
               <ul>
                 <li>
-                  <span>
-                    <BiUserCircle />
-                  </span>
                   <Link to='./Login'>signIn</Link>
                 </li>
                 <li>/</li>

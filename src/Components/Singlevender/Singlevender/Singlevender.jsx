@@ -7,7 +7,7 @@ const Singlevender = () => {
   return (
     <div className='Singlevender-display'>
         <h1>ALL List of Products BY UMUSHANA Shop </h1>
-        <Shopdata/>  
+        {/* <Shopdata/>   */}
     </div>
   )
 }
