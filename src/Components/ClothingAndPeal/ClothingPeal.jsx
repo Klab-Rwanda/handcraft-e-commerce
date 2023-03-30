@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Clothing.css";
 import { MdArrowRightAlt } from "react-icons/md";
 import { FaCartPlus } from "react-icons/fa";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
+
+import { AuthContext } from "../../Components/context/AuthProvider";
 import { Link } from "react-router-dom";
 import APEAL from '../../assets/appeal.jpg';
 import ING from '../../assets/ingo.jpg';
+
 const ClothingPeal = () => {
+  const { products } = useContext(AuthContext);
+  console.log(products);
+
   return (
     <>
       <section id="clothing">
@@ -38,238 +44,43 @@ const ClothingPeal = () => {
             </div>
           </div>
           <div className="apealright">
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-              <li>
-               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-             </li>
-            <li>
-             <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-          </li>
-            <li>
-           <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-           </li>
-              </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-              <li>
-                 <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-               </li>
-                 <li>
-              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-               </li>
-              <li>
-              <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-              </li>
-              </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-                 <li>
-                <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-              </li>
-                <li>
-               <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-               </li>
-               <li>
-                 <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-               </li>
-              </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-               <li>
-                <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-              </li>
-              <li>
-              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-              </li>
-              <li>
-              <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-              </li>
-              </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-               <li>
-                <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-               </li>
-              <li>
-              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-               </li>
-             <li>
-              <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-             </li>
-             </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-               <li>
-               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-             </li>
-              <li>
-              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-             </li>
-            <li>
-             <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-            </li>
-             </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-              <li>
-               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-              </li>
-              <li>
-              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-            </li>
-              <li>
-             <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-            </li>
-             </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
-            <div className="proCards">
-              <img src={ING} alt="" />
-              <div className="overview">
-              <ul>
-              <li>
-               <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
-              </li>
-              <li>
-              <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-            </li>
-              <li>
-             <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
-            </li>
-             </ul>
-              </div>
-              <div className="proDetails">
-                <h3>Classic hat</h3>
-                <div className="reviws">
-                  <div className="rates">
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                    <AiFillStar className="rate" />
-                  </div>
-                  <p>(1 reviews)</p>
-                </div>
-                <small>$3000</small>
-              </div>
-            </div>
+          
+              {products?.map((product) => {
+                return (
+                  <>
+                    <div className="proCards">
+                      <img src={product.productImage} alt="" />
+                      <div className="overview">
+                        <ul>
+                          <li>
+                            <FaCartPlus className="iconx" />
+                          </li>
+                          <li>
+                            <AiOutlineHeart className="iconx" />
+                          </li>
+                          <li>
+                            <HiOutlineArrowNarrowRight className="iconx" />
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="proDetails">
+                        <h3>{product.productName}</h3>
+                        <div className="reviws">
+                          <div className="rates">
+                            <AiFillStar className="rate" />
+                            <AiFillStar className="rate" />
+                            <AiFillStar className="rate" />
+                            <AiFillStar className="rate" />
+                          </div>
+                          <p>(1 reviews)</p>
+                        </div>
+                        <small>{product.productPrice} Frw</small>
+                      </div>
+                    </div>
+                  </>
+                );
+              })}
+
           </div>
         </div>
       </section>

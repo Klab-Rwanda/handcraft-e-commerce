@@ -1,23 +1,23 @@
-import React from 'react'
-import './App.css';
-import { BrowserRouter, Routes, Route, Outlet }  from 'react-router-dom';
-import Home  from './Pages/Home'
-import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
-import AdminUsers from './Pages/AdminUsers/AdminUsers';
-import AdminSideBar from './Components/Admin/AdminSidebar/AdminSideBar';
-import VendorSidebar from './Components/Vendor/VendorSidebar/VendorSidebar';
+import React from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Home from "./Pages/Home";
+import AdminDashboard from "./Pages/AdminDashboard/AdminDashboard";
+import AdminUsers from "./Pages/AdminUsers/AdminUsers";
+import AdminSideBar from "./Components/Admin/AdminSidebar/AdminSideBar";
+import VendorSidebar from "./Components/Vendor/VendorSidebar/VendorSidebar";
 import Product from "./Pages/VendorDashboard/Product";
-import Adminallproducts from './Pages/AdminProducts/Adminallproducts';
-import Adminsellerdetail from './Pages/AdminsellerDetail/Adminsellerdetail';
-import Adminsales from './Pages/AdminSales/Adminsales';
-import AdminLogout from './Pages/Adminlogout/AdminLogout';
-import VendorDashboard from './Components/Vendor/vendorDashboard/vendorDashboard';
-import Sales from './Pages/VendorDashboard/Sales';
-import Order from './Pages/VendorDashboard/Order';
-import Transition from './Pages/VendorDashboard/Transition';
-import Setting from './Pages/VendorDashboard/Setting';
-import Shop from './Pages/Shop/Shop';
-import Vender from './Pages/Vender/Vender'
+import Adminallproducts from "./Pages/AdminProducts/Adminallproducts";
+import Adminsellerdetail from "./Pages/AdminsellerDetail/Adminsellerdetail";
+import Adminsales from "./Pages/AdminSales/Adminsales";
+import AdminLogout from "./Pages/Adminlogout/AdminLogout";
+import VendorDashboard from "./Components/Vendor/vendorDashboard/vendorDashboard";
+import Sales from "./Pages/VendorDashboard/Sales";
+import Order from "./Pages/VendorDashboard/Order";
+import Transition from "./Pages/VendorDashboard/Transition";
+import Setting from "./Pages/VendorDashboard/Setting";
+import Shop from "./Pages/Shop/Shop";
+import Vender from "./Pages/Vender/Vender";
 
 import Login from './Components/Forms/login/Login';
 import Register from './Components/Forms/register/Register';
@@ -32,9 +32,7 @@ import Payment from './Pages/Payment/Payment';
 import WishlistPage from './Pages/WishlistPage/WishlistPage';
 import CartPage from './Pages/CartPage/CartPage';
 
-
 const App = () => {
-
   const [sider, setSider] = useState(false);
   return (
     <>
@@ -44,7 +42,14 @@ const App = () => {
           <Route path="Shop" element={<Shop />} />
           <Route path="Vender" element={<Vender />} />
 
-          <Route path="Login" element={<Login />} />
+          <Route
+            path="Login"
+            element={
+              <ProtectAuthentication>
+                <Login />
+              </ProtectAuthentication>
+            }
+          />
           <Route path="Signup" element={<Register />} />
           <Route path="Buy" element={<Buy />} />
           <Route path="Cart" element={<Cart />} />
@@ -99,11 +104,6 @@ const App = () => {
       </BrowserRouter>
     </>
   );
-}
+};
 
-export default App
-
-
-
-
-
+export default App;

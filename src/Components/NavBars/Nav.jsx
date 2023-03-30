@@ -6,8 +6,23 @@ import { HiShoppingCart } from "react-icons/hi";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import {Link} from 'react-router-dom';
 import Header from "../header/Header";
+import { AuthContext } from "../../Components/context/AuthProvider";
+import { useContext, useState } from "react";
+import {  useNavigate } from "react-router-dom";
+
 
 const Nav = () => {
+ 
+  const { loggedUser } = useContext(AuthContext);
+  console.log( loggedUser )
+  const navigate = useNavigate();
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
+
+
   return (
     <>
       <nav className="nav-page">
@@ -15,15 +30,53 @@ const Nav = () => {
           <div className="container welcome">
             <h6>Welcome to made in RWANDA hand craft</h6>
             <div className="Nav-register">
-              <ul>
-                <li>
-                  <Link to="./Login">signIn</Link>
-                </li>
-                <li>/</li>
-                <li>
-                  <Link to="/Signup">register</Link>
-                </li>
-              </ul>
+
+        
+
+              {localStorage.getItem("token") ? (
+                <>
+                  <div className="after-login">
+                    <Link className="user" to="">
+                      <span
+                        onClick={() => {
+                          localStorage.removeItem("token");
+                          window.location.href = "/Login";
+                        }}
+                      >
+                        LOGOUT
+                      </span>
+                    </Link>
+
+                    <Link className="user" to="">
+                      <span className="user">{loggedUser?.firstName}</span>
+                    </Link>
+
+                    <span>
+                      <img
+                        src={loggedUser.profile}
+                        className="img-mic"
+                        alt="miprofile"
+                      />
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <ul>
+                    <li>
+                      <span>
+                        <BiUserCircle id="user-logo" />
+                      </span>
+                      <Link to="./Login">signIn</Link>
+                    </li>
+                    <li>/</li>
+                    <li>
+                      <Link to="/Signup">register</Link>
+                    </li>
+                  </ul>
+                </>
+              )}
+
             </div>
           </div>
         </div>
@@ -52,7 +105,9 @@ const Nav = () => {
             <div className="cwcontainer">
               <div className="cart">
                 <span>
+
                   <Link to="/WishlistPage">
+
                     <AiOutlineHeart />
                   </Link>
                 </span>
@@ -60,7 +115,9 @@ const Nav = () => {
               </div>
               <div className="cart">
                 <span>
+
                   <Link to="/CartPage">
+     
                     <HiShoppingCart />
                   </Link>
                 </span>
