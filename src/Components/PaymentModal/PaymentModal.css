@@ -43,7 +43,7 @@
   border: 2px solid black;
   border-radius: 3px;
   height: 30px;
-  width: 12rem;
+  width: 10.8rem;
 }
 .promo-code{
     display: flex;
@@ -69,7 +69,7 @@
     align-items: center;
     background-color: white;
     width:30%;
-    margin-left: 40%; 
+    /* margin-left: 40%;  */
     border-radius: 10px;
 }
 #Payment-method{
@@ -81,7 +81,7 @@
   margin-left:-10px;
 }
 #payment-close{
-    margin-left: 23rem;
+    /* margin-left: 23rem; */
 }
 
 /* Tablet responsiveness */
@@ -91,7 +91,7 @@
     align-items: center;
     background-color: white;
     width:55%;
-    margin-left:20%; 
+    /* margin-left:20%;  */
     border-radius: 10px;
 }
 #cvv-frm{

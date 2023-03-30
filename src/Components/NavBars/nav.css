@@ -89,6 +89,10 @@
   gap: 1rem;
   align-items: center;
 }
+.after-login{
+  display: flex;
+  gap :1rem
+}
 
 
 /*============================================== Tablet Media Queries ==============================================*/
