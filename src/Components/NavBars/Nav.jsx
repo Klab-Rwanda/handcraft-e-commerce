@@ -31,6 +31,8 @@ const Nav = () => {
             <h6>Welcome to made in RWANDA hand craft</h6>
             <div className="Nav-register">
 
+        
+
               {localStorage.getItem("token") ? (
                 <>
                   <div className="after-login">
@@ -103,7 +105,9 @@ const Nav = () => {
             <div className="cwcontainer">
               <div className="cart">
                 <span>
-                  <Link to="/Wishlist">
+
+                  <Link to="/WishlistPage">
+
                     <AiOutlineHeart />
                   </Link>
                 </span>
@@ -111,7 +115,9 @@ const Nav = () => {
               </div>
               <div className="cart">
                 <span>
-                  <Link to="/Cart">
+
+                  <Link to="/CartPage">
+     
                     <HiShoppingCart />
                   </Link>
                 </span>

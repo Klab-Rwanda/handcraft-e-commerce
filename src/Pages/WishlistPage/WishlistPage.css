@@ -1,11 +1,10 @@
-.contact-footer{
+.wishlist-footer{
     margin-top: 2rem;
-    background-color: blue;
 }
 
 /* Tablet responsiveness */
 @media screen AND (max-width: 1040px){
-.site-footer{
+.wishlist-footer{
   margin-top:8rem;
 }
 }
@@ -13,7 +12,7 @@
 /* Small-mobile responsiveness */
 
 @media screen AND (max-width: 480px){
-.site-footer{
-  margin-bottom:-8rem;
+.wishlist-footer{
+  margin-top:3rem;
 }
 } 

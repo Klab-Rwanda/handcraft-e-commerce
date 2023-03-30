@@ -1,15 +1,10 @@
 import React from 'react'
 import "./PaymentModal.css";
-import { GrClose } from "react-icons/gr";
 const PaymentModal = () => {
   return (
     <div className="paymentcont1">
       <div className="payment-comments">
-        <span>
-          <GrClose
-            id="payment-close"
-          />
-        </span>
+        
         <b>
           <p>Payment details</p>
         </b>
