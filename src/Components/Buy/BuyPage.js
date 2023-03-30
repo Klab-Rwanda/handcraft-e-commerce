@@ -53,6 +53,12 @@ const BuyPage = () => {
                            Any back in 30 days</div></div>
           </div>
       </div> 
+      <div className='buy-sect2'>
+        <div className='buy-sect2-part1'>
+          
+        </div>
+        <div className='buy-sect2-part2'></div>
+      </div>
     </>
   )
 }
