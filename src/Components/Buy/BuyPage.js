@@ -27,9 +27,9 @@ const BuyPage = () => {
           <div className="buy-sect1-part2-text-btn1">
            <div> <p>SIZE</p> </div>
            <div> <button> XLarge</button> </div>
-           <div> <button> Large</button> </div>
-           <div> <button> Medium</button> </div>
-           <div> <button> Small</button> </div>
+           <div> <button className='buy-color'> Large</button> </div>
+           <div> <button className='buy-color'> Medium</button> </div>
+           <div> <button className='buy-color'> Small</button> </div>
           </div>
           <div className="buy-sect1-part2-text-btn2">
           <button> Add to Cart</button>
