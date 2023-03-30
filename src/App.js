@@ -32,6 +32,7 @@ import Payment from './Pages/Payment/Payment';
 import SingleProductview from './Pages/SingleProductview/SingleProductview';
 import WishlistPage from './Pages/WishlistPage/WishlistPage';
 import CartPage from './Pages/CartPage/CartPage';
+import ProtectAuthentication from "./Components/ProtectAuthentication/ProtectAuthentication";
 
 const App = () => {
   const [sider, setSider] = useState(false);
