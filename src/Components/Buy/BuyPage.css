@@ -30,6 +30,7 @@
   width: 380px;
   height: 370px;
   margin: 15px;
+  cursor: pointer;
 }
 .buy-sect1 .buy-sect1-part2 .sect1-part2-text {
   margin: 15px;
@@ -100,4 +101,13 @@
   width: 20%;
   border: 1px solid black;
   height: auto;
+  font-size: 12px;
+}
+.buy-sect1 .buy-sect1-part3 .icon-view-sect1 {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+.buy-sect1 .buy-sect1-part3 .buy-icons {
+  font-size: 30px;
 }/*# sourceMappingURL=BuyPage.css.map */

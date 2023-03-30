@@ -1,5 +1,8 @@
 import React from 'react'
 import {AiFillStar} from 'react-icons/ai';
+import {BsTruck}  from 'react-icons/bs'
+import {CgToolbox} from 'react-icons/cg'
+import {GiWallet} from 'react-icons/gi'
 import './BuyPage.css'
 
 const BuyPage = () => {
@@ -42,9 +45,12 @@ const BuyPage = () => {
 
         </div>
         <div className="buy-sect1-part3">
-          <div> icons free shipping</div>
-          <div> icons free shipping</div>
-          <div> icons free shipping</div>
+          <div className='icon-view-sect1'>  <div><BsTruck className='buy-icons'/></div> <div><b>Free Shipping & Returns</b><br/>
+                           For all order over $99</div></div>
+          <div className='icon-view-sect1'> <div> <CgToolbox className='buy-icons'/> </div> <div><b>Secure Payment</b><br/>
+                           We ensure secure Payment</div></div>
+          <div className='icon-view-sect1'> <div><GiWallet className='buy-icons'/></div> <div><b>Money back grant</b><br/>
+                           Any back in 30 days</div></div>
           </div>
       </div> 
     </>
