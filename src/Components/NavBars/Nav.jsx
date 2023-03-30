@@ -17,19 +17,19 @@ const Nav = () => {
             <div className="Nav-register">
               <ul>
                 <li>
-                  <Link to='./Login'>signIn</Link>
+                  <Link to="./Login">signIn</Link>
                 </li>
                 <li>/</li>
                 <li>
-                <Link to='/Signup'>register</Link>
-                  </li>
+                  <Link to="/Signup">register</Link>
+                </li>
               </ul>
             </div>
           </div>
         </div>
         <div className="container search">
           <div className="icon_header">
-          <img src="Madein.PNG" alt='our log'/>
+            <img src="Madein.PNG" alt="our log" />
           </div>
           <div className="input_search">
             <select name="allCategories" id="">
@@ -52,13 +52,17 @@ const Nav = () => {
             <div className="cwcontainer">
               <div className="cart">
                 <span>
-                  <Link to='/Wishlist'><AiOutlineHeart /></Link>
+                  <Link to="/WishlistPage">
+                    <AiOutlineHeart />
+                  </Link>
                 </span>
                 <small>Wishlist</small>
               </div>
               <div className="cart">
                 <span>
-                <Link to='/Cart'><HiShoppingCart /></Link>
+                  <Link to="/CartPage">
+                    <HiShoppingCart />
+                  </Link>
                 </span>
                 <small>Cart</small>
               </div>

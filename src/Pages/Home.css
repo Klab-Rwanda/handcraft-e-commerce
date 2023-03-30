@@ -1,19 +1,18 @@
-.contact-footer{
+.home-footer{
     margin-top: 2rem;
-    background-color: blue;
 }
 
 /* Tablet responsiveness */
 @media screen AND (max-width: 1040px){
-.site-footer{
-  margin-top:8rem;
+.home-footer{
+  margin-top:70rem;
 }
 }
 
 /* Small-mobile responsiveness */
 
 @media screen AND (max-width: 480px){
-.site-footer{
-  margin-bottom:-8rem;
+.home-footer{
+  margin-top:195rem;
 }
 } 

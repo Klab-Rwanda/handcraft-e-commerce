@@ -1,0 +1,39 @@
+.Wishlist-table{
+    /* margin:20px 25px ; */
+    background-color:rgb(135, 164, 197);
+    border: none;
+    border-radius:10px;
+    border-collapse: collapse;
+    padding:7px;
+    /* margin-right:50px; */
+    width:40px;
+}
+.Wishlist-table th{
+padding:5px 30px;
+font-size:14px;
+
+background-color:var(--color-icon-bg);
+}
+.Wishlist-table td{
+padding:1.5rem 5rem;
+background-color:white;
+border-bottom:1px solid rgb(146, 144, 144);
+border-radius:2px;
+}
+.wishlist-container{
+    background-color:white;
+    margin-top: 60px;
+    margin-left:7rem;
+    width:82%;
+    padding: 1rem;
+}
+#actionbutoon{
+    width:7rem;
+    height: 2rem;
+}
+#actionbutoon2{
+    margin-left:3rem;
+}
+.wish-title{
+    text-align: center;
+}

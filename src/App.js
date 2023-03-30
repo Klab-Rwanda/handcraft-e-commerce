@@ -23,13 +23,14 @@ import Login from './Components/Forms/login/Login';
 import Register from './Components/Forms/register/Register';
 
 import Cart from './Pages/Cart/Cart';
-import Wishlist from './Pages/Wishlist/Wishlist'
 import Buy from './Pages/Buy/Buy'
 import {useState} from "react";
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Singlevender from './Pages/SingleVender/Singlevender';
 import Payment from './Pages/Payment/Payment';
+import WishlistPage from './Pages/WishlistPage/WishlistPage';
+import CartPage from './Pages/CartPage/CartPage';
 
 
 const App = () => {
@@ -47,10 +48,11 @@ const App = () => {
           <Route path="Signup" element={<Register />} />
           <Route path="Buy" element={<Buy />} />
           <Route path="Cart" element={<Cart />} />
-          <Route path="Wishlist" element={<Wishlist />} />
           <Route path="About" element={<About />} />
           <Route path="Contact" element={<Contact />} />
-          <Route path="Payment" element={<Payment/>} />
+          <Route path="Payment" element={<Payment />} />
+          <Route path="WishlistPage" element={<WishlistPage />} />
+          <Route path="CartPage" element={<CartPage/>} />
           <Route path="Singlevender" element={<Singlevender />} />
 
           <Route index element={<Home />} />

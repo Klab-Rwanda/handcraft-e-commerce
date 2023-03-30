@@ -1,11 +1,9 @@
-.contact-footer{
+.cart-footer{
     margin-top: 2rem;
-    background-color: blue;
 }
-
 /* Tablet responsiveness */
 @media screen AND (max-width: 1040px){
-.site-footer{
+.cart-footer{
   margin-top:8rem;
 }
 }
@@ -13,7 +11,7 @@
 /* Small-mobile responsiveness */
 
 @media screen AND (max-width: 480px){
-.site-footer{
-  margin-bottom:-8rem;
+.cart-footer{
+  margin-top:10rem;
 }
 } 
