@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./AdminSidebar.css";
 import { AiFillDashboard } from "react-icons/ai";
 import { MdOutlineManageAccounts } from "react-icons/md";
@@ -8,17 +8,45 @@ import { TbTransitionBottom } from "react-icons/tb";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import robot from "../AdminSidebar/robot.jpg";
+import { AuthContext } from "../../context/AuthProvider";
+
+
+
 
 const AdminSideBar = ({sider}) => {
+
+
+  const { loggedUser } = useContext(AuthContext);
+  console.log(loggedUser);
+
+
+
   return (
     <div className={sider ? "sider-open" : "side"}>
-      <div className="side-profile">
-        <img src={robot} alt="seller-photo" className="img-mic" />
-        <div className="side-profile-text">
-          <p>hello!!</p>
-          <h1 className="side-profile-text-h1">IC Store</h1>
-        </div>
+
+     <div className="side-profile">
+        {localStorage.getItem("token") ? (
+          <>
+            <img
+              src={loggedUser.profile}
+              alt="profile icon"
+              className="img-mic"
+            />
+            <div className="side-profile-text">
+              <p>hello!!</p>
+              <h1 className="side-profile-text-h1">{loggedUser?.firstName}</h1>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
+
+
+
+
+
+
       <div className="side-menu">
         <Link to="./" className="side-menu-single">
           <AiFillDashboard className="D-icon" />
@@ -41,9 +69,17 @@ const AdminSideBar = ({sider}) => {
           <TbTransitionBottom className="D-icon" id="icons" />
           <h1 className="side-menu-text-h1">Sales</h1>
         </Link>
-        <Link to="/" className="side-menu-single">
+        <Link to="" className="side-menu-single">
           <RiLogoutBoxFill className="D-icon" id="icons" />
-          <h1 className="side-menu-text-h1">Logout</h1>
+          <h1
+            className="side-menu-text-h1"
+            onClick={() => {
+              localStorage.removeItem("token");
+              window.location.href = "/Login";
+            }}
+          >
+            Logout
+          </h1>
         </Link>
       </div>
     </div>
