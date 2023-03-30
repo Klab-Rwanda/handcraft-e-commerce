@@ -28,7 +28,7 @@ const Header = () => {
               <li><Link to='/'>Home</Link></li>
               <li><Link to='/Shop'>Shop</Link></li>
               <li><Link to='/Vender'>Vendor</Link></li>
-              <li><Link to='#'>About us</Link></li>
+              <li><Link to='/About'>About us</Link></li>
             </ul>
           </div>
           <div className="trackOrders">

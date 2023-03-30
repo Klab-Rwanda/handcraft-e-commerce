@@ -1,0 +1,194 @@
+#payment-Subject {
+  background-color: white;
+  border: 2px solid black;
+  height: 30px;
+  width: 22rem;
+  border-radius: 3px;
+}
+#payment-commentbuton{
+  width: 350px;
+  height: 40px;
+  color: white;
+  background-color: lightseagreen;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+#payment-Comments {
+  background-color: white;
+  border: 2px solid black;
+  height: 60px;
+  width: 22rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+#payment-header{
+  text-align: center;
+}
+.exp-cvv{
+    display: flex;
+    gap: 1rem;
+}
+#Date-frm{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: 30px;
+  width:9rem;
+}
+#cvv-frm{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: 30px;
+  width: 12rem;
+}
+.promo-code{
+    display: flex;
+    gap: 1rem;
+}
+.last-paycontent{
+    display: flex;
+    gap: 13rem;
+    border-bottom: black 1px solid;
+}
+.total{
+    display: flex;
+    gap: 13rem;
+}
+.payment-comments{
+    justify-content: center;
+    align-items: center;
+    margin-top:1rem;
+    padding: 1rem;
+}
+.paymentcont1{
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:30%;
+    margin-left: 40%; 
+    border-radius: 10px;
+}
+#Payment-method{
+  background-color: white;
+  border: 2px solid black;
+  height: 30px;
+  width: 22rem;
+  border-radius: 3px;
+  margin-left:-10px;
+}
+#payment-close{
+    margin-left: 23rem;
+}
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+.paymentcont1{
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:55%;
+    margin-left:20%; 
+    border-radius: 10px;
+}
+#cvv-frm{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: 30px;
+  width:10.8rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+#payment-Subject {
+  background-color: white;
+  border: 2px solid black;
+  height: 30px;
+  width:19rem;
+  border-radius: 3px;
+}
+#payment-commentbuton{
+  width:19rem;
+  height: 40px;
+  color: white;
+  background-color: lightseagreen;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+}
+#payment-Comments {
+  background-color: white;
+  border: 2px solid black;
+  height: 60px;
+  width:19rem;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+#payment-header{
+  text-align: center;
+}
+.exp-cvv{
+    display: flex;
+    gap: 1rem;
+}
+#Date-frm{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: 30px;
+  width:8rem;
+}
+#cvv-frm{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 3px;
+  height: 30px;
+  width: 9rem;
+}
+.promo-code{
+    display: flex;
+    gap: 1rem;
+}
+.last-paycontent{
+    display: flex;
+    gap: 10rem;
+    border-bottom: black 1px solid;
+}
+.total{
+    display: flex;
+    gap: 10rem;
+}
+.payment-comments{
+    justify-content: center;
+    align-items: center;
+    margin-top:1rem;
+    padding: 1rem;
+}
+.paymentcont1{
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width:90%;
+    margin-left:4.5%; 
+    border-radius: 10px;
+}
+#Payment-method{
+  background-color: white;
+  border: 2px solid black;
+  height: 30px;
+  width:19rem;
+  border-radius: 3px;
+  margin-left:-6px;
+}
+#payment-close{
+    margin-left:18rem;
+}
+} 

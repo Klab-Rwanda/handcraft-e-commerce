@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {BiUserCircle} from 'react-icons/bi'
+import {BiUserCircle} from 'react-icons/bi
 import './Header.css'
 import { AuthContext } from "../../context/AuthProvider";
 import { useContext, useState } from "react";
@@ -52,10 +52,10 @@ const Header = () => {
             <>
               <ul>
                 <li>
-                  <span>
-                    <BiUserCircle id="user-logo" />
-                  </span>
-                  <Link to="./Login">signIn</Link>
+
+
+                  <Link to='./Login'>signIn</Link>
+
                 </li>
                 <li>/</li>
                 <li>

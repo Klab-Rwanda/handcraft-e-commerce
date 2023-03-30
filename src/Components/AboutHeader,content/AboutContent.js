@@ -2,12 +2,13 @@ import React from 'react'
 import "./AboutContent.css";
 import aboucontentpc1 from "../AboutHeader,content/About bcd.jpg";
 import aboucontentpc2 from "../AboutHeader,content/How-to-hang-a-gallery-of-wall-baskets-IG.jpg";
+import { Link } from "react-router-dom";
 const AboutContent = () => {
   return (
     <div id="Aboutall-container">
       <div className="About-box1">
         <div className="first">
-          <p id='para2'>
+          <p id="para2">
             <h1>
               <b>OUR STORY</b>
             </h1>
@@ -47,9 +48,13 @@ const AboutContent = () => {
             className="aboucontentpc2"
             id="about2"
           />
+          <button id="About-contact">
+            <Link to="/Contact">CONTACT US</Link>
+          </button>
+          <br />
         </div>
         <div className="the-second">
-          <p id='para1'>
+          <p id="para1">
             <h1 id="maincontent-titleog">
               <b>OUR MISSION</b>
             </h1>

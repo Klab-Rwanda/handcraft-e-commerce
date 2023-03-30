@@ -30,6 +30,7 @@ const Nav = () => {
           <div className="container welcome">
             <h6>Welcome to made in RWANDA hand craft</h6>
             <div className="Nav-register">
+
               {localStorage.getItem("token") ? (
                 <>
                   <div className="after-login">
@@ -73,6 +74,7 @@ const Nav = () => {
                   </ul>
                 </>
               )}
+
             </div>
           </div>
         </div>

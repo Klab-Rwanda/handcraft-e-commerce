@@ -19,17 +19,17 @@ import Setting from "./Pages/VendorDashboard/Setting";
 import Shop from "./Pages/Shop/Shop";
 import Vender from "./Pages/Vender/Vender";
 
-import Login from "./Components/Forms/login/Login";
-import Register from "./Components/Forms/register/Register";
+import Login from './Components/Forms/login/Login';
+import Register from './Components/Forms/register/Register';
 
-import Cart from "./Pages/Cart/Cart";
-import Wishlist from "./Pages/Wishlist/Wishlist";
-import Buy from "./Pages/Buy/Buy";
-import { useState } from "react";
-import About from "./Pages/About/About";
-import Contact from "./Pages/Contact/Contact";
-import Singlevender from "./Pages/SingleVender/Singlevender";
-import ProtectAuthentication from "./Components/context/ProtectAuthentication";
+import Cart from './Pages/Cart/Cart';
+import Wishlist from './Pages/Wishlist/Wishlist'
+import Buy from './Pages/Buy/Buy'
+import {useState} from "react";
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
+import Singlevender from './Pages/SingleVender/Singlevender';
+import Payment from './Pages/Payment/Payment';
 
 const App = () => {
   const [sider, setSider] = useState(false);
@@ -55,6 +55,7 @@ const App = () => {
           <Route path="Wishlist" element={<Wishlist />} />
           <Route path="About" element={<About />} />
           <Route path="Contact" element={<Contact />} />
+          <Route path="Payment" element={<Payment/>} />
           <Route path="Singlevender" element={<Singlevender />} />
 
           <Route index element={<Home />} />

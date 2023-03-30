@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Wishlistcomp = () => {
+const Wishlistcomp = (props) => {
   return (
     <div>
-      <input type='checkbox'/>
-      <img src='/public/Flag/Flag1.jpg'/>
-      <p>product name</p>
+      <div><input type='checkbox'/></div>
+      <div><img src={props.imageUrl} alt={props.name} width={'50px'} height={'50px'} /></div>
+      <div><h2>{props.name}</h2></div>
+      <div><p>{props.price}</p></div>
+      <div>icons</div>
     </div>
   )
 }

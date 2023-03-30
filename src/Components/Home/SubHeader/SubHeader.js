@@ -199,7 +199,8 @@ const SubHeader = () => {
                 <Link to="/Vender">Vendor</Link>
               </li>
               <li>
-                About us
+
+                <Link to="/About">About us</Link>
               </li>
             </ul>
           </div>
