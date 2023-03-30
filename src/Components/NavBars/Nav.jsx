@@ -32,27 +32,30 @@ const Nav = () => {
             <div className="Nav-register">
               {localStorage.getItem("token") ? (
                 <>
-                  <Link className="user" to="">
-                    <span className="user">{loggedUser?.firstName}</span>
-                  </Link>
-                  <span>
-                    <img
-                      src={loggedUser.profile}
-                      className="img-mic"
-                      alt="miprofile"
-                    />
-                  </span>
+                  <div className="after-login">
+                    <Link className="user" to="">
+                      <span
+                        onClick={() => {
+                          localStorage.removeItem("token");
+                          window.location.href = "/Login";
+                        }}
+                      >
+                        LOGOUT
+                      </span>
+                    </Link>
 
-                  <Link className="user" to="">
-                    <span
-                      onClick={() => {
-                        localStorage.removeItem("token");
-                        window.location.href = "/Login";
-                      }}
-                    >
-                      LOGOUT
+                    <Link className="user" to="">
+                      <span className="user">{loggedUser?.firstName}</span>
+                    </Link>
+
+                    <span>
+                      <img
+                        src={loggedUser.profile}
+                        className="img-mic"
+                        alt="miprofile"
+                      />
                     </span>
-                  </Link>
+                  </div>
                 </>
               ) : (
                 <>

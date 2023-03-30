@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import axios from "../../Axios/axios";
 import { AuthContext } from "../../context/AuthProvider";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { Link } from "react-router-dom";
  
 
 const VendorProduct = () => {
@@ -140,7 +141,9 @@ const onSubmit = async (data) => {
           <FaSearch className="sear" />
         </div>
         <div className="dash-right">
-          <p>visit your store</p>
+         <Link   to = "/">
+              <p>Go to home</p>
+            </Link>
         </div>
       </div>
       <div className="main-product">

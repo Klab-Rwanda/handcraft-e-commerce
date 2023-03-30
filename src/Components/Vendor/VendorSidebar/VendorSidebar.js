@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './VendorSidebar.css'
 import {AiFillDashboard} from 'react-icons/ai'
 import {MdOutlineManageAccounts, MdProductionQuantityLimits} from 'react-icons/md'
@@ -10,18 +10,36 @@ import { GrProductHunt } from 'react-icons/gr'
 import { RiLogoutBoxFill } from 'react-icons/ri'
 import { Link } from 'react-router-dom';
 import robot from '../VendorSidebar/robot.jpg';
+import { AuthContext } from "../../context/AuthProvider";
 
 
 
 const VendorSidebar = () => {
+
+  const { loggedUser } = useContext(AuthContext);
+  console.log("pauline");
+  // const navigate = useNavigate();
+
+
+
   return (
     <div className="side">
       <div className="side-profile">
-        <img src={robot} alt="profile icon" className="img-mic" />
-        <div className="side-profile-text">
-          <p>hello!!</p>
-          <h1 className="side-profile-text-h1">IC Store</h1>
-        </div>
+        {localStorage.getItem("token") ? (
+          <>
+            <img
+              src={loggedUser.profile}
+              alt="profile icon"
+              className="img-mic"
+            />
+            <div className="side-profile-text">
+              <p>hello!!</p>
+              <h1 className="side-profile-text-h1">{loggedUser?.firstName}</h1>
+            </div>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="side-menu">
         <Link to="./" className="side-menu-single">
