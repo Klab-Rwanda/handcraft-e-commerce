@@ -101,6 +101,7 @@
         width: 20%;
         border: 1px solid black;
         height: auto;
+        justify-content: space-between;
         font-size: 12px;
         .icon-view-sect1{
             display: flex;
@@ -108,7 +109,7 @@
             margin: 15px;  
         }
         .buy-icons{
-            font-size: 30px;
+            font-size: 33px;
         }
         
     }
