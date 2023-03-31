@@ -10,7 +10,7 @@ const UserManageConent = () => {
    console.log(allUser)
 
 
-   
+    const filteredUsers = allUser?.filter(U=>U.vendorId===1 && 2)
   return (
     <div>
       <div className="user-boxx">
