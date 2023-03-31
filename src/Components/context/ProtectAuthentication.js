@@ -1,19 +1,21 @@
 import react, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 
 const ProtectAuthentication = ({ children }) => {
   const { loggedUser } = useContext(AuthContext);
+  const navigate = useNavigate()
   if (localStorage.getItem("token")) {
     if (!loggedUser) {
       return;
     } 
     else if (loggedUser?.roleId === 1) {
        console.log("pauline");
-         window.location.href = "/AdminDashboard";
+        navigate( "/AdminDashboard");
      } else if (loggedUser?.roleId == 2) {
-         window.location.href = "/VendorDashboard";
+        navigate( "/VendorDashboard");
      } else if (loggedUser?.roleId == 3) {
-         window.location.href = "/";
+        navigate( "/");
      } else {
        // alert('role id not found');
      }

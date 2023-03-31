@@ -55,3 +55,21 @@
   right: 0;
   margin-bottom: 5px;
 }/*# sourceMappingURL=venderBody.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.vender-card-layout__item{
+  align-items: center;
+  justify-content: center;
+  margin-left:3rem;
+}
+.vender-views{
+  margin-left:6rem;
+}
+}

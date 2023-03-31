@@ -90,3 +90,17 @@ border-style:groove;
 text-decoration: none;
 font-size:16px;
 }
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+#login-footer{
+  margin-top:-8rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+#login-footer{
+  margin-top:-8rem;
+}
+} 

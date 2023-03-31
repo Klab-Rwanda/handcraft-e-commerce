@@ -125,3 +125,14 @@
   margin: 5px;
   font-size: 17px;
 }/*# sourceMappingURL=SubHeader.css.map */
+.menu-open{
+  display: none;
+}
+@media screen AND (max-width: 600px) {
+.navBar{
+  display:none;
+}
+.menu-open{
+  display: block;
+}
+}

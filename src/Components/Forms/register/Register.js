@@ -34,8 +34,8 @@ export default function Register() {
   const onSubmit = async (data) => {
     console.log(data);
   const userData= new FormData();
-  userData.append('firstname',data.firstname);
-  userData.append("lastname", data .lastname);
+  userData.append('firstName',data.firstname);
+  userData.append("lastName", data .lastname);
   userData.append("email", data.email);
   userData.append("profile", data.profile[0]);
   userData.append("password", data.password);
@@ -47,11 +47,12 @@ export default function Register() {
           "Content-Type": "multipart/form-data",
         },
       });
-       console.log(response);
-        console.log(response.accessToken);
-        console.log(JSON.stringify(response));
-        setSuccess(true);
-        navigate("/login");
+       
+         const accessToken = response?.data?.token;
+         localStorage.setItem("token", accessToken);
+         window.location.reload(true);
+        // setSuccess(true);
+        // navigate("/login");
     } catch (err) {
       console.log(err.response)
     }
@@ -132,7 +133,9 @@ export default function Register() {
          
         </div>
       </div>
+      <div id='register-footer' >
       <Footer/>
+      </div>
     </>
   );
 }

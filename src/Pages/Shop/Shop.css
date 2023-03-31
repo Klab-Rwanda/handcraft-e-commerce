@@ -14,3 +14,21 @@
   flex-basis: 75%;
   flex-grow: 1;
 }/*# sourceMappingURL=Shop.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+.shop-cat1{
+  display: none;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.shop-cat1{
+  display: none;
+}
+.shop-footer{
+  margin-top: -5rem;
+}
+} 

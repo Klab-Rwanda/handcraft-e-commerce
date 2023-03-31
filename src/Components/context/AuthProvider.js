@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   const [loggedUser, setLoggedUser] = useState({});
  const [products, setProducts] = useState([]);
+ const [cartItems, setCartItems] = useState([]);
 
  console.log(loggedUser.id);
 //  console.log(Products);
@@ -29,6 +30,22 @@ export const AuthProvider = ({ children }) => {
       console.log(err.response);
     }
   };
+
+
+  const FetchCarts = async()=>{
+    try{
+const data = await axios("cart/read",{
+
+});
+console.log(data);
+setCartItems(data.data.data)
+
+    }
+    catch(error){
+   console.log(error.response)
+    }
+  };
+
   
    const fetchProducts = async () => {
     try {
@@ -47,10 +64,13 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     FetchUser();
     fetchProducts();
+    FetchCarts();
   }, [decodedToken]);
 
   return (
-    <AuthContext.Provider value={{ auth,loggedUser,products,setAuth }}>
+    <AuthContext.Provider
+      value={{ auth, loggedUser, products, cartItems, setAuth }}
+    >
       {children}
     </AuthContext.Provider>
   );

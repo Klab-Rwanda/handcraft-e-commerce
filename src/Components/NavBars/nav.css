@@ -93,8 +93,9 @@
   display: flex;
   gap :1rem
 }
-
-
+#Home-menuicon{
+  display: none;
+}
 /*============================================== Tablet Media Queries ==============================================*/
 
 @media screen AND (max-width: 1024px) {
@@ -125,6 +126,10 @@
   .search {
     height: 80px;
   }
+
+  #Home-menuicon{
+  display: block;
+}
 }
 
 /*============================================== mobile  Media Queries ==============================================*/
@@ -158,6 +163,10 @@
   }
   .icon_header{
     display: flex;
-    gap: 3rem;
+    gap:10px;
   }
+    #Home-menuicon{
+  display: block;
+  font-size: 30px;
+}
 }

@@ -1,10 +1,11 @@
 .shopdata {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-basis: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  position: relative;
 }
+
 .shopdata .shopdata-container1 {
   justify-content: space-between;
   flex-basis: calc(33.33% - 10px);
@@ -18,3 +19,21 @@
 .shopdata div {
   flex-basis: 33.33%;
 }/*# sourceMappingURL=Shopdata.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+
+.shop-banner .shop-banner-text button{
+ padding: 2rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.shopdata-container1{
+ display: flex;
+ flex-direction:column;
+}
+}
+

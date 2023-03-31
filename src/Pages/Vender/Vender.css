@@ -14,3 +14,18 @@
   flex-basis: 75%;
   flex-grow: 1;
 }/*# sourceMappingURL=Vender.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+.site-footer{
+  margin-top:8rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.vender-cat1{
+  display:none;
+}
+} 

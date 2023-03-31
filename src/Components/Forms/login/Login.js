@@ -12,7 +12,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../context/AuthProvider";
 import axios from "../../Axios/axios";
-const LOGIN_URL = "https://madeinapi.onrender.com/api/zeus/users/login";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
+
 
 
 const schema = yup.object().shape({
@@ -41,6 +42,8 @@ try{
   const response = await axios.post("users/login",data); 
   const accessToken = response?.data?.token;
   localStorage.setItem('token',accessToken);
+  Notify.success("logged in successfully");
+
    window.location.reload(true);
   console.log(response);
    
@@ -48,6 +51,10 @@ try{
     }
 catch (err){
 console.log(err.response);
+if(err.response.status=== 404){
+  Notify.failure(" password is incorrect");
+
+}
 }
   
 
@@ -93,7 +100,9 @@ console.log(err.response);
           </div>
         </div>
       </div>
+      <div id='login-footer' >
       <Footer />
+      </div>
     </>
   );
 }

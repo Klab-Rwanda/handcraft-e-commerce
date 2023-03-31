@@ -6,14 +6,18 @@ import { HiShoppingCart } from "react-icons/hi";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import {Link} from 'react-router-dom';
 import Header from "../header/Header";
-import { AuthContext } from "../../Components/context/AuthProvider";
 import { useContext, useState } from "react";
 import {  useNavigate } from "react-router-dom";
+import { BiMenu } from "react-icons/bi";
+import {AuthContext} from "../context/AuthProvider";
+
+
 
 
 const Nav = () => {
- 
-  const { loggedUser } = useContext(AuthContext);
+  const [menu, setMenu] = useState(false);
+
+  const { loggedUser} = useContext(AuthContext);
   console.log( loggedUser )
   const navigate = useNavigate();
   const logout = () => {
@@ -30,9 +34,6 @@ const Nav = () => {
           <div className="container welcome">
             <h6>Welcome to made in RWANDA hand craft</h6>
             <div className="Nav-register">
-
-        
-
               {localStorage.getItem("token") ? (
                 <>
                   <div className="after-login">
@@ -76,12 +77,12 @@ const Nav = () => {
                   </ul>
                 </>
               )}
-
             </div>
           </div>
         </div>
         <div className="container search">
           <div className="icon_header">
+            <BiMenu id="Home-menuicon" onClick={()=> setMenu(!menu)}/>
             <img src="Madein.PNG" alt="our log" />
           </div>
           <div className="input_search">
@@ -105,9 +106,7 @@ const Nav = () => {
             <div className="cwcontainer">
               <div className="cart">
                 <span>
-
                   <Link to="/WishlistPage">
-
                     <AiOutlineHeart />
                   </Link>
                 </span>
@@ -115,9 +114,7 @@ const Nav = () => {
               </div>
               <div className="cart">
                 <span>
-
                   <Link to="/CartPage">
-     
                     <HiShoppingCart />
                   </Link>
                 </span>
@@ -127,7 +124,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      <Header />
+      <Header menu={menu} />
     </>
   );
 };

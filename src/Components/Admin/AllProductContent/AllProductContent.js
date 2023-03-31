@@ -1,59 +1,52 @@
 import React from 'react'
 import "./AllProductContent.css";
+import { AuthContext } from "../../context/AuthProvider";
+import  { useContext } from "react";
+
+
+
+
+
 const AllProductContent = () => {
+
+  const { products } = useContext(AuthContext);
+  console.log(products);
+
+
   return (
     <div>
       <div className="product-boxx">
         <table className="table">
           <tr>
-            <th>
-              <input type="checkbox" name="select" />
-            </th>
-            <th>P.name</th>
-            <th> Vendor</th>
+            
+            <th>P.Image</th>
+            <th>p.Name </th>
+            <th>vendor</th>
             <th>Price</th>
-            <th>Quantity</th>
             <th>Description</th>
           </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Black-shirt</td> <td>Yves Bryan</td>
-            <td>30,000 frw</td>
-            <td>20</td> <td>large</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Black-shirt</td> <td>Yves Bryan</td>
-            <td>30,000 frw</td>
-            <td>20</td> <td>large</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Black-shirt</td> <td>Yves Bryan</td>
-            <td>30,000 frw</td>
-            <td>20</td> <td>large</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Black-shirt</td> <td>Yves Bryan</td>
-            <td>30,000 frw</td>
-            <td>20</td> <td>large</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Black-shirt</td> <td>Yves Bryan</td> <td>30,000 frw</td>
-            <td>20</td> <td>large</td>
-          </tr>
+
+{
+  products?.map(product =>{
+    return (
+      <tr>
+        <td>
+          <img
+            src={product.productImage}
+            alt="pimage"
+            className="img-min"
+          ></img>
+        </td>
+        <td>
+          <p>{product.productName}</p>
+        </td>
+        <td>John</td> <td>{product.productPrice}</td>{" "}
+        <td>{product.productDescription}</td>{" "}
+      </tr>
+    );
+  })
+}
+
         </table>
       </div>
       <div className="next-cont">
