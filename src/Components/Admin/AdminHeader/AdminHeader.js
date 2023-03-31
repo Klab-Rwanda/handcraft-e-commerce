@@ -296,7 +296,7 @@ function AdminHeader({sider, setSider}) {
                 <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
               </LineChart>
             </div>
-            <div className="cardnew2"></div>
+            {/* <div className="cardnew2"></div> */}
           </div>
         </div>
       </div>

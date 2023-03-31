@@ -10,7 +10,9 @@ const About = () => {
   return (
     <div>
       <Header />
-      <SubHeader />
+      <div className="about-subheader">
+        <SubHeader />
+      </div>
       <AboutHeader />
       <AboutContent />
       <div className="about-footer">

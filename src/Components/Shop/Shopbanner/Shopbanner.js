@@ -13,7 +13,7 @@ const Shopbanner = () => {
              <div className='shop-banner-img'>
                 <img src="/Slide/slide7.jpeg" alt="shopbanner"/>
                 </div>   
-            </div>
+          </div>
     </>
   )  
 }

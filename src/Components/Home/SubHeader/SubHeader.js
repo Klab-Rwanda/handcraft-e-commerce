@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useContext}from 'react'
 import './SubHeader.css'
 import {AiOutlineHeart, AiOutlineShoppingCart} from 'react-icons/ai'
 import {GiInjustice} from 'react-icons/gi'
@@ -12,6 +12,7 @@ import {IoPricetagsOutline} from 'react-icons/io5'
 import {AiOutlineBars} from 'react-icons/ai'
 import {MdKeyboardArrowDown} from 'react-icons/md'
 import {GoLocation} from 'react-icons/go'
+import { AuthContext } from '../../context/AuthProvider'
 
 
 
@@ -19,6 +20,7 @@ import {GoLocation} from 'react-icons/go'
 
 
 const SubHeader = () => {
+  const {menu } = useContext(AuthContext);
   return (
     <>
       <div className="nav-page">
@@ -158,7 +160,7 @@ const SubHeader = () => {
           </div>
         </div>
       </div>
-      <div className="navBar">
+      <div className={ menu ? "" : "navBar"}>
         <div className="container subNav">
           <div className="categories">
             <span>

@@ -7,31 +7,40 @@ import MainHeader from "./MainHeader";
 import {Link} from 'react-router-dom'
 
 
-const Header = () => {
+
+const Header = ({menu}) => {
   return (
     <>
-      <div className="navBar">
+      <div className={menu ? "response" : "navBar"}>
         <div className="container subNav">
-          <div className="categories">
+          <div className={menu ? "off-screen" : "categories"}>
             <span>
               <AiOutlineBars />
             </span>
-            <div className="pdetails">
+            <div className={menu ? "off-screen" : "pdetails"}>
               <p>BrowseCategory</p>
               <span>
                 <MdKeyboardArrowDown />
               </span>
             </div>
           </div>
-          <div className="links">
+          <div className={menu ? "" : "links"}>
             <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/Shop'>Shop</Link></li>
-              <li><Link to='/Vender'>Vendor</Link></li>
-              <li><Link to='/About'>About us</Link></li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/Shop">Shop</Link>
+              </li>
+              <li>
+                <Link to="/Vender">Vendor</Link>
+              </li>
+              <li>
+                <Link to="/About">About us</Link>
+              </li>
             </ul>
           </div>
-          <div className="trackOrders">
+          <div className={menu ? "off-screen" : "trackOrders"}>
             <div className="track">
               <span>
                 <GoLocation />

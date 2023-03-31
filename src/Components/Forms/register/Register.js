@@ -133,7 +133,9 @@ export default function Register() {
          
         </div>
       </div>
+      <div id='register-footer' >
       <Footer/>
+      </div>
     </>
   );
 }

@@ -12,21 +12,23 @@ import Hotitems from '../../Components/Shop/Hotitems/Hotitems'
 const Shop = () => {
   return (
     <div>
-      <Header/>
-      <SubHeader/>
+      <Header />
+      <SubHeader />
       <div className="shop-container">
-       <div className='shop-cat1'>
-        <CategoliesNav/>
-        <Hotitems/>
-        </div> 
-        <div className='shop-cat2'>
-          <Shopbanner/>
-          <Shopdata/>
-          </div>
+        <div className="shop-cat1">
+          <CategoliesNav />
+          <Hotitems />
+        </div>
+        <div className="shop-cat2">
+          <Shopbanner />
+          <Shopdata />
+        </div>
       </div>
-      <Footer/>
+      <div className="shop-footer">
+        <Footer />
       </div>
-  )
+    </div>
+  );
 }
 
 export default Shop

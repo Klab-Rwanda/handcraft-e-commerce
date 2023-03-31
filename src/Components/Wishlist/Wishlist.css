@@ -37,3 +37,25 @@ border-radius:2px;
 .wish-title{
     text-align: center;
 }
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.wishlist-container{
+    background-color:white;
+    margin-top: 60px;
+    margin-left:7rem;
+    width:100%;
+    padding: 1rem;
+}
+
+.wish-title{
+    text-align: center;
+    position: fixed;
+}
+}

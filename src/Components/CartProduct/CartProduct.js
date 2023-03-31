@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./CartProduct.css";
 import wishlistproduct from "../Wishlist/product7.jpg";
+import locationpc from "../CartProduct/1mtn.jpeg";
+import locationpc2 from "../CartProduct/1airtel.jpg";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { AiOutlineHeart } from "react-icons/ai";
 import PaymentModal from "../PaymentModal/PaymentModal";
@@ -150,6 +152,10 @@ const CartProduct = () => {
           <button id="continue-commentbuton">
             <b>Continue Shopping</b>
           </button>
+          <div className="payment-methodline">
+            <img src={locationpc} alt="pimage" className="mtnairtel"></img>
+            <img src={locationpc2} alt="pimage" className="irtel"></img>
+          </div>
         </div>
         {modal && (
           <div className="modal-container">

@@ -9,9 +9,7 @@ const Shopdata = () => {
   console.log(products);
 
   return (
-    <div className="shopdata">
-
-
+    
 
   {/* fix erreor for shop data */}
 
@@ -32,6 +30,7 @@ const Shopdata = () => {
           </>
         );
       })}
+
     </div>
   );
 };

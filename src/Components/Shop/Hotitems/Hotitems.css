@@ -14,3 +14,14 @@
   margin-left: auto;
   margin-right: auto;
 }/*# sourceMappingURL=Hotitems.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+
+} 

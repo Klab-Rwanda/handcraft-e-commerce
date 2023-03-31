@@ -35,3 +35,27 @@
   width: 100%;
   height: 100%;
 }/*# sourceMappingURL=Shopbanner.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+.shop-banner{
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+}
+.shop-banner .shop-banner-text button{
+ padding: 2rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.shop-banner .shop-banner-text h1{
+  font-size: 22px;
+}
+.shop-banner .shop-banner-text button{
+  height:10rem;
+  width: 12rem;
+}
+} 
