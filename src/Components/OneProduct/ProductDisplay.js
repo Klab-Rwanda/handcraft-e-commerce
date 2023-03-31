@@ -14,11 +14,11 @@ function ProductDisplay(props) {
       <div className="overview">
   <ul>
     <li>
-     <Link to='/cart'><FaCartPlus className="iconx" /></Link> 
+     <FaCartPlus className="iconx"  /> 
     </li>
-    <li>
-      <Link to='/Wishlist'><AiOutlineHeart className="iconx" /></Link>
-    </li>
+    {/* <li>
+      <AiOutlineHeart className="iconx" />
+    </li> */}
     <li>
      <Link to='/Buy'> <HiOutlineArrowNarrowRight className="iconx" /></Link>
     </li>
@@ -33,7 +33,7 @@ function ProductDisplay(props) {
             </span>
           ))}
         </div> 
-        <p>{props.price}</p>
+        <p>{props.price} Frw</p>
       </div>
     </div>
   );

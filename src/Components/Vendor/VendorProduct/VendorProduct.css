@@ -151,15 +151,16 @@ border-radius:2px;
 .popup-bg{
     position:fixed;
     background-color: rgb(5, 5, 5,0.5);
-    margin-top:-400px;
+    margin-top:-25rem;
     width:80%;
     max-height:110vh;
-    overflow-y:auto;
+    /* overflow-y:auto; */
   
 }
 .popup{
-   
    padding:0px 50px;
+   /* position: absolute; */
+   
     /* background-color: black; */
     z-index:30;
     /* margin-top:100px; */

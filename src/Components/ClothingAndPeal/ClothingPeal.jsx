@@ -7,12 +7,34 @@ import { AiFillStar, AiOutlineHeart } from "react-icons/ai";
 
 import { AuthContext } from "../../Components/context/AuthProvider";
 import { Link } from "react-router-dom";
-import APEAL from '../../assets/appeal.jpg';
-import ING from '../../assets/ingo.jpg';
+import APEAL from "../../assets/appeal.jpg";
+import ING from "../../assets/ingo.jpg";
+import axios from "../../Components/Axios/axios";
+import { Notify } from "notiflix/build/notiflix-notify-aio";
 
 const ClothingPeal = () => {
   const { products } = useContext(AuthContext);
   console.log(products);
+
+  const handleCart = async (id) => {
+    const data = { numberOfItems: 1 };
+    try {
+      const response = await axios.post(
+        `cart/addToCart/productId/${id}`,data,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+     Notify.success("Added to Cart successfully");
+     window.location.reload(true)
+      console.log(response);
+    } catch (error) {
+      if(error.response.status===401){ Notify.failure("Please Login first before adding to Cart");}
+     
+    }
+  };
 
   return (
     <>
@@ -44,43 +66,46 @@ const ClothingPeal = () => {
             </div>
           </div>
           <div className="apealright">
-          
-              {products?.map((product) => {
-                return (
-                  <>
-                    <div className="proCards">
-                      <img src={product.productImage} alt="" />
-                      <div className="overview">
-                        <ul>
-                          <li>
-                            <FaCartPlus className="iconx" />
-                          </li>
-                          <li>
-                            <AiOutlineHeart className="iconx" />
-                          </li>
-                          <li>
-                            <HiOutlineArrowNarrowRight className="iconx" />
-                          </li>
-                        </ul>
-                      </div>
-                      <div className="proDetails">
-                        <h3>{product.productName}</h3>
-                        <div className="reviws">
-                          <div className="rates">
-                            <AiFillStar className="rate" />
-                            <AiFillStar className="rate" />
-                            <AiFillStar className="rate" />
-                            <AiFillStar className="rate" />
-                          </div>
-                          <p>(1 reviews)</p>
-                        </div>
-                        <small>{product.productPrice} Frw</small>
-                      </div>
+            {products?.map((product) => {
+              return (
+                <>
+                  <div className="proCards">
+                    <img src={product.productImage} alt="" />
+                    <div className="overview">
+                      <ul>
+                        <li>
+                          <FaCartPlus
+                            className="iconx"
+                            onClick={() => {
+                              handleCart(product.id);
+                            }}
+                          />
+                        </li>
+                        {/* <li>
+                          <AiOutlineHeart className="iconx" />
+                        </li> */}
+                        <li>
+                          <HiOutlineArrowNarrowRight className="iconx" />
+                        </li>
+                      </ul>
                     </div>
-                  </>
-                );
-              })}
-
+                    <div className="proDetails">
+                      <h3>{product.productName}</h3>
+                      <div className="reviws">
+                        <div className="rates">
+                          <AiFillStar className="rate" />
+                          <AiFillStar className="rate" />
+                          <AiFillStar className="rate" />
+                          <AiFillStar className="rate" />
+                        </div>
+                        <p>(1 reviews)</p>
+                      </div>
+                      <small>{product.productPrice} Frw</small>
+                    </div>
+                  </div>
+                </>
+              );
+            })}
           </div>
         </div>
       </section>
