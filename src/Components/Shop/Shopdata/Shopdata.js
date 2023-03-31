@@ -13,7 +13,7 @@ const Shopdata = () => {
 
 
 
-
+  {/* fix erreor for shop data */}
 
 
       
