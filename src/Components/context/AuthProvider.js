@@ -8,6 +8,9 @@ export const AuthProvider = ({ children }) => {
   const { decodedToken, isExpired } = useJwt(localStorage.getItem("token"));
   const [auth, setAuth] = useState({});
   const [loggedUser, setLoggedUser] = useState({});
+  const [allUser, setAllUser] = useState({});
+
+
  const [products, setProducts] = useState([]);
  const [cartItems, setCartItems] = useState([]);
 
@@ -30,6 +33,20 @@ export const AuthProvider = ({ children }) => {
       console.log(err.response);
     }
   };
+
+  const FetchAllUser = async () => {
+    try {
+      const data = await axios("/users/getAll",{});
+      console.log(data);
+      setAllUser(data.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+ 
+
+
+  
 
 
   const FetchCarts = async()=>{
@@ -63,13 +80,14 @@ setCartItems(data.data.data)
 
   useEffect(() => {
     FetchUser();
+    FetchAllUser();
     fetchProducts();
     FetchCarts();
   }, [decodedToken]);
 
   return (
     <AuthContext.Provider
-      value={{ auth, loggedUser, products, cartItems, setAuth }}
+      value={{ auth, loggedUser, products, cartItems,allUser, setAuth }}
     >
       {children}
     </AuthContext.Provider>

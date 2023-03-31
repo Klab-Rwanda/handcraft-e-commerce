@@ -1,0 +1,160 @@
+.buy-sect1 {
+  display: flex;
+  flex-direction: row;
+  margin: 25px;
+  justify-content: space-between;
+  gap: 20px;
+}
+.buy-sect1 .buy-sect1-part1 {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+}
+.buy-sect1 .buy-sect1-part1 h1 {
+  font-weight: bold;
+  text-align: center;
+}
+.buy-sect1 .buy-sect1-part1 img {
+  width: 100%;
+  height: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+.buy-sect1 .buy-sect1-part2 {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 65%;
+}
+.buy-sect1 .buy-sect1-part2 img {
+  width: 380px;
+  height: 390px;
+  margin: 15px;
+  cursor: pointer;
+}
+.buy-sect1 .buy-sect1-part2 .sect1-part2-text {
+  margin: 15px;
+  font-size: 24px;
+  justify-content: center;
+}
+.buy-sect1 .buy-sect1-part2 .sect1-part2-text h1 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.buy-sect1 .buy-sect1-part2 .sect1-part2-text h2 {
+  font-size: 20px;
+  font-weight: semi-bold;
+}
+.buy-sect1 .buy-sect1-part2 .buy-rate {
+  color: #FFC107;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn1 {
+  display: flex;
+  flex-direction: row;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn1 p {
+  font-size: 22px;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn1 .buy-color {
+  background-color: green;
+  color: aliceblue;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn1 Button {
+  font-size: 16px;
+  width: auto;
+  margin: 8px;
+  border-radius: 6px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+}
+.buy-sect1 .buy-sect1-part2 .buy-details {
+  font-size: 14px;
+}
+.buy-sect1 .buy-sect1-part2 .buy-details h3 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.buy-sect1 .buy-sect1-part2 .buy-details p {
+  font-size: 14px;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn2 {
+  display: flex;
+  flex-direction: row;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn2 Button {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  width: 96%;
+  height: 50px;
+  margin: 8px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn3 {
+  display: flex;
+  flex-direction: row;
+}
+.buy-sect1 .buy-sect1-part2 .buy-sect1-part2-text-btn3 Button {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  width: 96%;
+  height: 50px;
+  margin: 8px;
+  font-size: 22px;
+  font-weight: bold;
+}
+.buy-sect1 .buy-sect1-part3 {
+  display: flex;
+  flex-direction: column;
+}
+.buy-sect1 .buy-sect1-part3 .icon-view-section {
+  width: 20%;
+  border: 1px solid black;
+  height: 175px;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.buy-sect1 .buy-sect1-part3 .icon-view-sect1 {
+  display: flex;
+  flex-direction: row;
+  margin: 15px;
+}
+.buy-sect1 .buy-sect1-part3 .buy-icons {
+  font-size: 33px;
+}
+.buy-sect1 .buy-sect1-part3 .vender-data {
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  justify-content: center;
+  margin: 15px;
+}
+.buy-sect1 .buy-sect1-part3 .vender-data h2 {
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+.buy-sect1 .buy-sect1-part3 .vender-data-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.buy-sect1 .buy-sect1-part3 .vender-data-img img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.buy-sect1 .buy-sect1-part3 .vender-data-img button {
+  border-radius: 5px;
+  border: 1px solid black;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px;
+}/*# sourceMappingURL=BuyPage.css.map */
