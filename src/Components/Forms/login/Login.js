@@ -100,7 +100,9 @@ if(err.response.status=== 404){
           </div>
         </div>
       </div>
+      <div id='login-footer' >
       <Footer />
+      </div>
     </>
   );
 }

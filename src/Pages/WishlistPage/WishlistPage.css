@@ -14,5 +14,11 @@
 @media screen AND (max-width: 480px){
 .wishlist-footer{
   margin-top:3rem;
+  /* position: fixed; */
+}
+.wishlistheading{
+  position: fixed;
+  margin-top: -7em;
+  margin-left: 1rem;
 }
 } 

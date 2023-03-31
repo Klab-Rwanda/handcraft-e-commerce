@@ -61,7 +61,7 @@ border-radius:2px;
     background-color: white;
     padding: 1rem;
     width:15rem;
-    height:44vh;
+    height:55vh;
     margin-top: 10rem;
 }
 .direction-button{
@@ -121,4 +121,15 @@ border-radius:2px;
 }
 #payment-close{
     color: white;
+}
+#mtnairtel{
+    margin-top: 1rem;
+}
+.payment-methodline img{
+    height:45px;
+    width:100px;
+}
+.payment-methodline{
+    display: flex;
+    gap: 10px;
 }

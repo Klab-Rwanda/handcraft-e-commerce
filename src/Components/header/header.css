@@ -4,6 +4,9 @@
   align-items: center;
   /* margin-top: 0.3rem; */
 }
+.off-screen{
+  display: none;
+}
 .categories {
   display: flex;
   align-items: center;
@@ -196,5 +199,11 @@
     position: absolute;
     top: 0;
     background: linear-gradient(to top, black, rgba(0, 0, 0, 0.5));
+  }
+  .response .links .trackOrders .track{
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
   }
 }
