@@ -1,0 +1,167 @@
+.buy-sect1{
+    display: flex;
+    flex-direction: row;
+    margin: 25px;
+    justify-content: space-between;
+    gap: 20px;
+    .buy-sect1-part1{
+        width: 15%;
+        display: flex;
+        flex-direction: column;
+        h1{
+            font-weight: bold;
+            text-align: center;
+        }
+        img{
+            width: 100%;
+            height: 100px;
+            margin: 10px;
+            cursor:pointer;
+        }
+    }
+    
+    .buy-sect1-part2{
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        border-radius: 20px;
+        width: 65%;
+        img{
+            width: 380px;
+            height: 390px;
+            margin: 15px;
+            cursor:pointer;
+        }
+        .sect1-part2-text{
+            margin: 15px;
+            font-size: 24px;
+            justify-content: center;
+            h1{
+                font-size: 22px;
+                font-weight: bold;
+            }
+            h2{
+                font-size: 20px;
+                font-weight: semi-bold;
+            }
+        }
+        .buy-rate{
+            color: #FFC107;
+        }
+        .buy-sect1-part2-text-btn1{
+            display:flex;
+            flex-direction: row;
+            p{
+                font-size: 22px;
+            }
+            .buy-color{
+                background-color:green;
+                color: aliceblue;
+            }
+            Button{
+                font-size: 16px;
+                width: auto;
+                margin: 8px;
+                border-radius: 6px;
+                border: 1px solid black;
+                background-color: transparent;
+                color: rgb(0, 0, 0);
+            }
+        }
+        .buy-details{
+            font-size: 14px;
+            h3{
+                font-size: 16px;
+                font-weight: bold;
+            }
+            p{
+                font-size: 14px;
+            }
+        }
+        .buy-sect1-part2-text-btn2{
+            display:flex;
+            flex-direction: row;
+            Button{
+                border-radius: 5px;
+                border: 1px solid black;
+                background-color: transparent;
+                color: rgb(0, 0, 0);
+                width: 96%;
+                height: 50px;
+                margin: 8px;
+                font-size: 22px;
+                font-weight: bold;
+            }
+        }
+        .buy-sect1-part2-text-btn3{
+            display: flex;
+            flex-direction: row;
+            Button{
+                border-radius: 5px;
+                border: 1px solid black;
+                background-color: transparent;
+                color: rgb(0, 0, 0);
+                width: 96%;
+                height: 50px;
+                margin: 8px;
+                font-size: 22px;
+                font-weight: bold;
+            }
+        }
+    }
+    .buy-sect1-part3{
+        display: flex;
+        flex-direction: column;
+
+        .icon-view-section{
+        width: 20%;
+        border: 1px solid black;
+        height: 175px;
+        justify-content: space-between;
+        font-size: 12px;
+       }
+        .icon-view-sect1{
+            display: flex;
+            flex-direction: row;
+            margin: 15px;  
+        }
+        .buy-icons{
+            font-size: 33px;
+        }
+         .vender-data{
+            font-size: 16px;
+            border: 1px solid black;
+            border-radius: 10px;
+            justify-content: center;
+            margin: 15px;
+            h2{
+                font-weight: bold;
+                font-size: 18px;
+                text-align: center;
+            }
+         }
+         
+        .vender-data-img{
+            display:flex;
+            flex-direction: row;
+            justify-content: center;
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+        
+                
+            } 
+            button{
+                border-radius: 5px;
+                border: 1px solid black;
+                color: rgb(0, 0, 0);
+                font-size: 16px;
+                font-weight: bold;
+                margin: 10px;
+            }       
+        
+    }
+}
+
+}

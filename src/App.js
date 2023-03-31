@@ -30,8 +30,11 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Singlevender from './Pages/SingleVender/Singlevender';
 import Payment from './Pages/Payment/Payment';
+import SingleProductview from './Pages/SingleProductview/SingleProductview';
 import WishlistPage from './Pages/WishlistPage/WishlistPage';
 import CartPage from './Pages/CartPage/CartPage';
+import ProtectAuthentication from "./Components/context/ProtectAuthentication";
+import OneVender from "./Pages/OneVender/OneVender";
 
 const App = () => {
   const [sider, setSider] = useState(false);
@@ -42,6 +45,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="Shop" element={<Shop />} />
           <Route path="Vender" element={<Vender />} />
+          <Route path="OneVender" element={<OneVender/>} />
 
           <Route
             path="Login"
@@ -64,7 +68,7 @@ const App = () => {
           <Route path="WishlistPage" element={<WishlistPage />} />
           <Route path="CartPage" element={<CartPage/>} />
           <Route path="Singlevender" element={<Singlevender />} />
-
+          <Route path="SingleProductview" element={<SingleProductview/>} />
           <Route index element={<Home />} />
           <Route />
           <Route
