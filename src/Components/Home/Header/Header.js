@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import {BiUserCircle} from 'react-icons/bi
 import './Header.css'
 import { AuthContext } from "../../context/AuthProvider";
 import { useContext, useState } from "react";

@@ -1,0 +1,30 @@
+.OneVender-container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-right: 25px;
+    
+  }
+  
+  .OneVender-cat1{
+    flex-basis: 20%;
+    
+  }
+  
+  .OneVender-cat2{
+    flex-basis: 75%;
+    justify-content: center;
+    
+  }
+
+  .single-vender-name{
+    justify-content: center;
+    font-size: 28px;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .vender-view{
+    width:100%;
+  }
+  
