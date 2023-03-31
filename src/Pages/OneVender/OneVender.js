@@ -18,6 +18,7 @@ const OneVender = () => {
       <Hotitems/>
       </div> 
       <div className='Onevender-cat2'>
+        <h1 className='single-vender-name'> SINGLE VENDERE</h1>
         <Shopdata/>
         </div>
     </div>
