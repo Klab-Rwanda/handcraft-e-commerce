@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import SallerDetailcontent from "../SallerDetailcontent/SallerDetailcontent";
 import "./UserManageConent.css";
 import { useState} from "react";
+import { AuthContext } from "../../context/AuthProvider";
 const UserManageConent = () => {
   const[modal, setModal] = useState(false);
+
+   const { allUser } = useContext(AuthContext);
+   console.log(allUser)
+
+
+   
   return (
     <div>
       <div className="user-boxx">
