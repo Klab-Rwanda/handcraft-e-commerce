@@ -21,6 +21,7 @@ import Vender from "./Pages/Vender/Vender";
 
 import Login from './Components/Forms/login/Login';
 import Register from './Components/Forms/register/Register';
+import ProtectAuthentication from './Components/context/ProtectAuthentication'
 
 import Cart from './Pages/Cart/Cart';
 import Buy from './Pages/Buy/Buy'
@@ -50,7 +51,11 @@ const App = () => {
               </ProtectAuthentication>
             }
           />
-          <Route path="Signup" element={<Register />} />
+          <Route path="Signup" element={
+          <ProtectAuthentication>
+            <Register />
+              </ProtectAuthentication>
+            } />
           <Route path="Buy" element={<Buy />} />
           <Route path="Cart" element={<Cart />} />
           <Route path="About" element={<About />} />
