@@ -5,8 +5,8 @@ import Footer from '../../Components/Home/Footer/Footer'
 import Shopdata from '../../Components/Shop/Shopdata/Shopdata'
 import CategoliesNav from '../../Components/CategoliesNav/CategoliesNav'
 import './Onevenderbody.css'
-import Onevenderbody from '../../Components/OneVender/Onevenderbody'
 import Hotitems from '../../Components/Shop/Hotitems/Hotitems'
+
 
 const OneVender = () => {
   return (
@@ -18,9 +18,7 @@ const OneVender = () => {
       <Hotitems/>
       </div> 
       <div className='Onevender-cat2'>
-        <h1 className='single-vender-name'> [Name of vender ]  List of Product </h1>
-        <Shopdata className='vender-view'/>
-        <Onevenderbody/>
+        <Shopdata/>
         </div>
     </div>
     <Footer/></div>

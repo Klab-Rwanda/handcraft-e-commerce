@@ -48,7 +48,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
@@ -69,7 +70,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
@@ -90,7 +92,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
@@ -111,7 +114,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
@@ -132,7 +136,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
@@ -174,7 +179,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
@@ -195,7 +201,8 @@ const VenderBody = () => {
             </div>
         </div>
         <div className="Vender-paragraph"><p>Umushanana Shop is a shop that is located in Huye city near the market which has different products which include made in Rwanda clothes of different kind.</p>
-        <Link to='/SingleProductview'><button className="Vender-button">visit shop</button></Link> </div>
+       <button className="Vender-button"><Link to='/OneVender'>visit Shop</Link> </button>
+        </div>
        </div>
 
     </div>
