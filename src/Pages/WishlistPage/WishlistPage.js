@@ -8,8 +8,10 @@ import "./WishlistPage.css";
 const WishlistPage = () => {
   return (
     <div>
-      <Header />
-      <SubHeader />
+      <div className="wishlistheading">
+        <Header />
+        <SubHeader />
+      </div>
       <Wishlist />
       <div className="wishlist-footer">
         <Footer />

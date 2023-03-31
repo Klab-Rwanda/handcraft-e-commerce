@@ -93,7 +93,9 @@ console.log(err.response);
           </div>
         </div>
       </div>
+      <div id='login-footer' >
       <Footer />
+      </div>
     </>
   );
 }

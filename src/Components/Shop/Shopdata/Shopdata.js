@@ -7,7 +7,7 @@ const Shopdata = () => {
   return (
     <div className='shopdata'>
       <div className='shopdata-container1'>
-      <div>
+      <div classname>
       <ProductDisplay
         imageUrl="/Shop/shop1.jpeg"
         name="MAdein Sandal"

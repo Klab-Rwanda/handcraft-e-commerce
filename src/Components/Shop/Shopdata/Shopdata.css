@@ -18,3 +18,20 @@
 .shopdata div {
   flex-basis: 33.33%;
 }/*# sourceMappingURL=Shopdata.css.map */
+
+/* Tablet responsiveness */
+@media screen AND (max-width: 1040px){
+
+.shop-banner .shop-banner-text button{
+ padding: 2rem;
+}
+}
+
+/* Small-mobile responsiveness */
+
+@media screen AND (max-width: 480px){
+.shopdata-container1{
+ display: flex;
+ flex-direction:column;
+}
+}

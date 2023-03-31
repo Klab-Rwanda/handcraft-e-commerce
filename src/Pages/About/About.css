@@ -1,5 +1,5 @@
 .about-footer{
-    margin-top: 7rem;
+   margin-top:6rem;
 }
 /* Tablet responsiveness */
 @media screen AND (max-width: 1040px){
@@ -11,7 +11,10 @@
 /* Small-mobile responsiveness */
 
 @media screen AND (max-width: 480px){
-.site-footer{
+/* .site-footer{
   margin-top:10rem;
 }
+.about-subheader{
+  display: block;
+} */
 } 
