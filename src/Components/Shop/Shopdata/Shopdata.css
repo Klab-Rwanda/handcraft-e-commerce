@@ -1,10 +1,11 @@
 .shopdata {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  flex-basis: 75%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  position: relative;
 }
+
 .shopdata .shopdata-container1 {
   justify-content: space-between;
   flex-basis: calc(33.33% - 10px);
@@ -35,3 +36,4 @@
  flex-direction:column;
 }
 }
+

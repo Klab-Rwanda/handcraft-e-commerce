@@ -21,6 +21,7 @@ import Vender from "./Pages/Vender/Vender";
 
 import Login from './Components/Forms/login/Login';
 import Register from './Components/Forms/register/Register';
+import ProtectAuthentication from './Components/context/ProtectAuthentication'
 
 import Cart from './Pages/Cart/Cart';
 import Buy from './Pages/Buy/Buy'
@@ -29,9 +30,13 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Singlevender from './Pages/SingleVender/Singlevender';
 import Payment from './Pages/Payment/Payment';
+import SingleProductview from './Pages/SingleProductview/SingleProductview';
 import WishlistPage from './Pages/WishlistPage/WishlistPage';
 import CartPage from './Pages/CartPage/CartPage';
 import ProtectAuthentication from "./Components/context/ProtectAuthentication";
+
+import OneVender from "./Pages/OneVender/OneVender";
+
 
 const App = () => {
   const [sider, setSider] = useState(false);
@@ -42,6 +47,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="Shop" element={<Shop />} />
           <Route path="Vender" element={<Vender />} />
+          <Route path="OneVender" element={<OneVender/>} />
 
           <Route
             path="Login"
@@ -51,7 +57,11 @@ const App = () => {
               </ProtectAuthentication>
             }
           />
-          <Route path="Signup" element={<Register />} />
+          <Route path="Signup" element={
+          <ProtectAuthentication>
+            <Register />
+              </ProtectAuthentication>
+            } />
           <Route path="Buy" element={<Buy />} />
           <Route path="Cart" element={<Cart />} />
           <Route path="About" element={<About />} />
@@ -60,7 +70,7 @@ const App = () => {
           <Route path="WishlistPage" element={<WishlistPage />} />
           <Route path="CartPage" element={<CartPage/>} />
           <Route path="Singlevender" element={<Singlevender />} />
-
+          <Route path="SingleProductview" element={<SingleProductview/>} />
           <Route index element={<Home />} />
           <Route />
           <Route

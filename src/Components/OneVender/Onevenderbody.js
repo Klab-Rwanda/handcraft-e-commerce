@@ -1,18 +1,14 @@
-import React from "react";
-import "./Shopdata.css";
-import ProductDisplay from "../../OneProduct/ProductDisplay";
-import { AuthContext } from "../../context/AuthProvider";
-import { useContext } from "react";
+import React from 'react'
+import './Onevender.css'
+import ProductDisplay from '../../OneProduct/ProductDisplay'
 
-const Shopdata = () => {
-  const { products } = useContext(AuthContext);
-  console.log(products);
-
+const Onevenderbody = () => {
   return (
-
-    <div className='shopdata'>
+    <div>
+        <h1 className='single-vender-name'> [Name of vender ]  List of Product </h1>
+        <div className='shopdata'>
       <div className='shopdata-container1'>
-      <div classname>
+      <div>
       <ProductDisplay
         imageUrl="/Shop/shop1.jpeg"
         name="MAdein Sandal"
@@ -87,33 +83,9 @@ const Shopdata = () => {
       />
       </div> 
       </div> 
-
-    <div className="shopdata">
-
-
-
-
-
-
-      
-      {products?.map((product) => {
-        return (
-          <>
-            <div className="shopdata-container1">
-              <ProductDisplay
-                imageUrl={product.productImage}
-                name={product.productName}
-                rating={5}
-                price={product.productPrice}
-                
-              />
-            </div>
-          </>
-        );
-      })}
-
     </div>
-  );
-};
+    </div>
+  )
+}
 
-export default Shopdata;
+export default Onevenderbody
