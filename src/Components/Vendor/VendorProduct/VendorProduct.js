@@ -13,15 +13,15 @@ const VendorProduct = () => {
   const [modal, setModal] = useState(false);
   const [selected, setSelected] = useState(null);
   const { products, loggedUser } = useContext(AuthContext);
-  console.log(products , loggedUser);
+  // console.log(products , loggedUser);
 
-  const filteredProduct = products?.filter(P=>P.vendorId===loggedUser.id)
+  const filteredProduct = products?.filter(P=>P.vendorId===loggedUser._id)
   const { register, handleSubmit, reset } = useForm({
     defaultValues: {
       productName: selected ? selected.productName : "",
       productDescription: selected ? selected.productDescription : "",
       productCategory: selected ? selected.productCategory : "",
-      productImage: selected ? selected.productImage : "",
+      image: selected ? selected.image : "",
       productPrice: selected ? selected.productPrice : "",
       productTag: selected ? selected.productTag : "",
       productDiscount: selected ? selected.productDiscount : "",
@@ -38,7 +38,7 @@ const VendorProduct = () => {
     formData.append("productName", data.productName);
     formData.append("productDescription", data.productDescription);
     formData.append("productCategory", data.productCategory);
-    formData.append("productImage", data.productImage[0]);
+    formData.append("image", data.image[0]);
     formData.append("productPrice", data.productPrice);
     formData.append("productTag", data.productTag);
     formData.append("productDiscount", data.productDiscount);
@@ -48,7 +48,7 @@ const VendorProduct = () => {
     try {
       if (selected) {
         const response = await axios.put(
-          `products/update/${selected.id}`,
+          `/products/${selected._id}`,
           formData,
           {
             headers: {
@@ -62,7 +62,8 @@ const VendorProduct = () => {
         alert("post successfully");
         reset();
       } else {
-        const response = await axios.post("products/create", formData, {
+        const response = await axios.post("/products", formData, {
+        
           headers: {
             "content-Type": "multipart/form-data",
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -74,13 +75,13 @@ const VendorProduct = () => {
         alert("post successfully");
         reset();
       }
-    } catch (error) {
-      console.log(error.response);
+    } catch (err) {
+      console.log(err.response);
     }
   };
 
   const getSingle = async (id) => {
-    const selectedProduct = product.find((product) => product.id === id);
+    const selectedProduct = product.find((product) => product._id === id);
     setSelected(selectedProduct);
     reset();
     console.log(selectedProduct);
@@ -91,9 +92,10 @@ const VendorProduct = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`products/delete/${id}`, {
+      await axios.delete(`products/${id}`, {
         headers: {
           "content-Type": "multipart/form-data",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
       window.location.reload(true);
@@ -183,7 +185,7 @@ const VendorProduct = () => {
                 <tr>
                   <td>
                     <img
-                      src={product.productImage}
+                      src={product.image}
                       alt="pimage"
                       className="img-min"
                     ></img>
@@ -202,7 +204,7 @@ const VendorProduct = () => {
                         setModal(true);
                         setSelected(product);
                         if (window.confirm("are you sure to edit this?")) {
-                          getSingle(product.id);
+                          getSingle(product._id);
                         }
                       }}
                     />
@@ -210,7 +212,7 @@ const VendorProduct = () => {
                       className="delete-icn"
                       onClick={() => {
                         if (window.confirm("are you sure to delete this?")) {
-                          handleDelete(product.id);
+                          handleDelete(product._id);
                         }
                       }}
                     />
@@ -238,7 +240,7 @@ const VendorProduct = () => {
 
                   <td>
                     <h1>Upload Photo</h1>
-                    <input type="file" {...register("productImage")} />
+                    <input type="file" {...register("image")} />
                   </td>
                 </tr>
                 <tr className="tr">

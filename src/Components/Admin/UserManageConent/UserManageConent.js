@@ -6,89 +6,48 @@ import { AuthContext } from "../../context/AuthProvider";
 const UserManageConent = () => {
   const[modal, setModal] = useState(false);
 
-   const { allUser } = useContext(AuthContext);
-   console.log(allUser)
+   const { allUsers } = useContext(AuthContext);
+   console.log(allUsers);
 
 
-    const filteredUsers = allUser?.filter(U=>U.vendorId===1 && 2)
+    // const filteredUsers = allUser?.filter(U=>U.roleId==1 ||U.roleId == 2)
+
+// console.log("PPO")
+    
   return (
     <div>
       <div className="user-boxx">
         <table className="table">
           <tr>
             <th>
-              <input type="checkbox" name="select" />
+              Profile
             </th>
-            <th>Name</th> <th>E-mail</th>
-            <th>Phone</th>
-            <th>Billing address</th>
-            <th>Status</th>
+            <th>Names</th> <th>E-mail</th>
             <th>Joined</th>
             <th>Actions</th>
           </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td
-              onClick={() => {
-                setModal(true);
-              }}
-            >
-              Tite mula
-            </td>
-            <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Tite mula</td> <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Tite mula</td> <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Tite mula</td> <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Tite mula</td> <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Tite mula</td> <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
-          <tr>
-            <td>
-              <input type="checkbox" name="select" />
-            </td>
-            <td>Tite mula</td> <td>ma@gmail </td> <td>099 345</td>
-            <td>Huye, SH23</td>
-            <td>Online</td> <td>20 jan 2023</td> <td>...</td>
-          </tr>
+         
+            {allUsers?.map((user) => {
+              return (
+                <>
+                 <tr>
+                  <td
+                    onClick={() => {
+                      setModal(true);
+                    }}
+                  >
+                   {user.profile}
+                  </td>
+                  <td>{user.firstName}</td> <td>{user.email}</td>
+                  
+                 <td>{user.createdAt}</td> <td>...</td>
+                
+                </tr>
+
+                </>
+              );
+            })}
+         
         </table>
       </div>
       <div className="user-next-cont">

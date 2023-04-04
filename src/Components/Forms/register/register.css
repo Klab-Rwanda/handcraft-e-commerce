@@ -1,5 +1,5 @@
 .register {
-  height:98vh;
+  height:190vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@
 }
 .red{
 
-  height:120vh;
+  height:195vh;
   width: 400px;
   border-color: black 1px;
 

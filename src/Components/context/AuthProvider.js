@@ -8,74 +8,90 @@ export const AuthProvider = ({ children }) => {
   const { decodedToken, isExpired } = useJwt(localStorage.getItem("token"));
   const [auth, setAuth] = useState({});
   const [loggedUser, setLoggedUser] = useState({});
-  const [allUser, setAllUser] = useState({});
+  const [allUsers, setAllUsers] = useState({});
 
+  const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
+  const [orders,setOrders]= useState([]);
 
- const [products, setProducts] = useState([]);
- const [cartItems, setCartItems] = useState([]);
-
- console.log(loggedUser.id);
-//  console.log(Products);
+  //  console.log(loggedUser.id);
+  console.log(loggedUser);
+  //  console.log(Products);
   const FetchUser = async () => {
     try {
-
-
       if (decodedToken) {
-        const result = await axios(`users/getOne/${decodedToken?.id}`);
-        setLoggedUser(result.data.data);
-       
+        const result = await axios(`users/${decodedToken?.id}`);
+        // console.log(result);
+        setLoggedUser(result.data.user);
       }
-    } 
-    
-    
-    
-    catch (err) {
+    } catch (err) {
       console.log(err.response);
     }
   };
 
   const FetchAllUser = async () => {
     try {
-      const data = await axios("/users/getAll",{});
+      const data = await axios("/users", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       console.log(data);
-      setAllUser(data.data);
+      setAllUsers(data.data.Users);
     } catch (error) {
       console.log(error.response);
     }
-  };
- 
 
-
-  
-
-
-  const FetchCarts = async()=>{
-    try{
-const data = await axios("cart/read",{
-
-});
-console.log(data);
-setCartItems(data.data.data)
-
-    }
-    catch(error){
-   console.log(error.response)
-    }
   };
 
-  
-   const fetchProducts = async () => {
+    const FetchCarts = async()=>{
+      try{
+  const data = await axios("carts",{
+
+  });
+  console.log(data.data.carts);
+  setCartItems(data.data.carts);
+
+      }
+      catch(error){
+     console.log(error.response)
+      }
+    };
+
+  const fetchProducts = async () => {
     try {
-      const data = await axios("/products/read", {
-       
-      });
-     console.log(data);
-      setProducts(data.data.data)
-    }
-    catch(err){
+      const data = await axios ("/products", {});
+      console.log(data.data.allProducts);
+      setProducts(data.data.allProducts);
+     
+
+    } catch (err) {
       console.log(err.response);
     }
-    };
+  };
+
+  const fetchOrders = async () => {
+    try {
+      const data = await axios("/orders", {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      console.log(data.data.orders);
+      setOrders(data.data.orders);
+    } catch (err) {
+      console.log(err.response);
+    }
+  };
+
+
+
+
+
+
+
+
+
   console.log(decodedToken);
 
   useEffect(() => {
@@ -83,11 +99,20 @@ setCartItems(data.data.data)
     FetchAllUser();
     fetchProducts();
     FetchCarts();
+    fetchOrders();
   }, [decodedToken]);
 
   return (
     <AuthContext.Provider
-      value={{ auth, loggedUser, products, cartItems,allUser, setAuth }}
+      value={{
+        auth,
+        loggedUser,
+        cartItems,
+        products,
+        orders,
+        allUsers,
+        setAuth,
+      }}
     >
       {children}
     </AuthContext.Provider>
