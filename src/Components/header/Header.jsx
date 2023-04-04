@@ -18,10 +18,24 @@ const Header = ({menu}) => {
               <AiOutlineBars />
             </span>
             <div className={menu ? "off-screen" : "pdetails"}>
-              <p>BrowseCategory</p>
-              <span>
-                <MdKeyboardArrowDown />
-              </span>
+              <p>
+              <select className="header-selector">
+              <option value="option1"> Browesr Categories </option>
+              <option value="option2">FASHION</option>
+              <option value="option3">Made in rwanda</option>
+              <option value="option3">Sport</option>
+              <option value="option3">Electronics</option>
+              <option value="option3">Home and garden</option>
+              <option value="option3">Health and beauty</option>
+              <option value="option3">Toys and hobbies</option>
+              <option value="option3">Automotive</option>
+              <option value="option3">Baby and kids</option>
+              <option value="option3">Books and stationery</option>
+              <option value="option3">Food and drinks</option>
+              <option value="option3">Pets</option>
+              <option value="option3">Travel</option>
+              <option value="option3">Other</option>
+            </select></p>
             </div>
           </div>
           <div className={menu ? "" : "links"}>

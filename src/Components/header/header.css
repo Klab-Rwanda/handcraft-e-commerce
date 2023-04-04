@@ -13,6 +13,13 @@
   background-color: var(--color-nav-bg);
   padding: 0.5rem 1rem;
 }
+
+.header-selector{
+  font-size: 1.3rem;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+}
 .categories span {
   font-size: 25px;
 }
