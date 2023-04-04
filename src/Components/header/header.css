@@ -42,6 +42,7 @@
 .track {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .trackOrders {
   display: flex;

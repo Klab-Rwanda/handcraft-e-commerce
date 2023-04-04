@@ -20,7 +20,7 @@ const Header = ({menu}) => {
             <div className={menu ? "off-screen" : "pdetails"}>
               <p>
               <select className="header-selector">
-              <option value="option1"> Browesr Categories </option>
+              <option value="option1"> Broweser Categories </option>
               <option value="option2">FASHION</option>
               <option value="option3">Made in rwanda</option>
               <option value="option3">Sport</option>
