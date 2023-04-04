@@ -19,20 +19,18 @@ const ClothingPeal = () => {
   const handleCart = async (id) => {
     const data = { numberOfItems: 1 };
     try {
-      const response = await axios.post(
-        `cart/addToCart/productId/${id}`,data,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
-     Notify.success("Added to Cart successfully");
-     window.location.reload(true)
+      const response = await axios.post(`/carts/${id}`, data, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
+      Notify.success("Added to Cart successfully");
+      window.location.reload(true);
       console.log(response);
     } catch (error) {
-      if(error.response.status===401){ Notify.failure("Please Login first before adding to Cart");}
-     
+      if (error.response.status === 401) {
+        Notify.failure("Please Login first before adding to Cart");
+      }
     }
   };
 
@@ -70,14 +68,14 @@ const ClothingPeal = () => {
               return (
                 <>
                   <div className="proCards">
-                    <img src={product.productImage} alt="" />
+                    <img src={product.image} alt="" />
                     <div className="overview">
                       <ul>
                         <li>
                           <FaCartPlus
                             className="iconx"
                             onClick={() => {
-                              handleCart(product.id);
+                              handleCart(product._id);
                             }}
                           />
                         </li>

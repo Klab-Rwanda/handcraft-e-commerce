@@ -9,29 +9,24 @@ const Shopdata = () => {
   console.log(products);
 
   return (
-    
-
-  {/* fix erreor for shop data */}
-
-
-      
-      {products?.map((product) => {
-        return (
-          <>
-            <div className="shopdata-container1">
-              <ProductDisplay
-                imageUrl={product.productImage}
-                name={product.productName}
-                rating={5}
-                price={product.productPrice}
-                
-              />
-            </div>
-          </>
-        );
-      })}
-
-    </div>
+    <>
+      <div className="shopdata">
+        {products?.map((product) => {
+          return (
+            <>
+              <div className="shopdata-container1">
+                <ProductDisplay
+                  imageUrl={product.image}
+                  name={product.productName}
+                  rating={5}
+                  price={product.productPrice}
+                />
+              </div>
+            </>
+          );
+        })}
+      </div>
+    </>
   );
 };
 
