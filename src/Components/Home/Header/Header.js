@@ -24,7 +24,7 @@ const Header = () => {
           {localStorage.getItem("token") ? (
             <>
               <div className="after-login">
-                <Link className="user" to="">
+                <Link className="user" to=".">
                   <span
                     onClick={() => {
                       localStorage.removeItem("token");
