@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { useState,useEffect } from 'react'
+import axios from "../../Axios/axios";
+
 import { Link } from "react-router-dom";
 import './VendorOrder.css'
+import { AuthContext } from '../../context/AuthProvider';
 
 const VendorOrder = () => {
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false);  
+  const {orders} = useContext(AuthContext); 
+console.log(orders);
+
+
+
+
+
+
+
+
+
   return (
     <>
       <div className="main-dashboard-order">
@@ -36,110 +50,41 @@ const VendorOrder = () => {
 
           <table className="product-table">
             <tr className="ptr">
-              <th>Date</th> <th>Product</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Total</th>
-              <th>Status</th>
-              <th>Actions</th>
+              <th>Date</th> <th>Customer</th>
+              <th>Purchases</th>
+              <th>Amount</th>
+              <th> Phone</th>
+              <th>Delivered</th>
+            
             </tr>
 
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td
-                onClick={() => {
-                  setModal(true);
-                }}
-              >
-                Trouser
-              </td>{" "}
-              <td>2</td> <td>$200</td> <td>$400</td> <td>Pending</td>
-              <td>:</td>
-            </tr>
+           {orders?.map((order) =>{
+            return(
+            <>
+              <tr>
+                <td>
+                  <p>{order.date}</p>
+                </td>
+                <td
+                  onClick={() => {
+                    setModal(true);
+                  }}
+                >
+                 {order.customer.firstName}
+                </td>{" "}
+                <td>productOrd</td> <td>{order.totalAmount}</td> <td>{order.phoneNumber}</td> <td>{order.delivered}</td>
+                <td>:</td>
+              </tr>
+            </>
+            );
+           })
+           }
 
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
-            <tr>
-              <td>
-                <p>12/03/2023</p>
-              </td>
-              <td>Trouser</td> <td>2</td> <td>$200</td> <td>$400</td>{" "}
-              <td>Pending</td>
-              <td>:</td>
-            </tr>
           </table>
         </div>
         {/* </div> */}
 
-        <div className="bg" style={{ display: !modal ? "none" : "flex" }}>
+        {/* <div className="bg" style={{ display: !modal ? "none" : "flex" }}>
           <div className="order-popup">
             <div className="topper-order">
               <div>
@@ -238,7 +183,7 @@ const VendorOrder = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

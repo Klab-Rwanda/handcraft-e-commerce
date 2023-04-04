@@ -24,7 +24,7 @@ const PaymentModal = ({productInCart}) => {
 
 
   const totalAmount = productInCart?.reduce(
-    (acc, current) => acc + current.productPrice,
+    (acc, current) => acc + Number(current.productPrice),
     0
   );
   console.log(totalAmount)
@@ -32,7 +32,7 @@ const PaymentModal = ({productInCart}) => {
    const onSubmit = async (data) => {
     //  try {
        console.log(data);
-       const response = await axios.post(`payment/request`,data, {
+       const response = await axios.post(`/orders`,data, {
          headers: {
            Authorization: `Bearer ${localStorage.getItem("token")}`,
          },

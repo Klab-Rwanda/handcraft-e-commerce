@@ -17,13 +17,13 @@ const CartProduct = () => {
   const [modal, setModal] = useState(false);
   const { cartItems, products, loggedUser } = useContext(AuthContext);
 
-  const ids = cartItems?.map((item) => Number(item.productId));
-  //  console.log(ids);
-  const cartsId = cartItems?.map((i) => Number(i.customerId));
+  const ids = cartItems?.map((item) => (item.productId));
+  //  console.log(ids)
+  const cartsId = cartItems?.map((i) =>(i.customerId));
 
-  const productInCard = products?.filter((item) => ids.includes(item.id));
+  const productInCard = products?.filter((item) => ids.includes(item._id));
 
-  console.log(productInCard, cartItems);
+  console.log(productInCard, cartItems,ids);
 
   const handleModal = () => {
     console.log("Modal clicked close");
@@ -33,7 +33,7 @@ const CartProduct = () => {
   const handleAccept = async (id) => {
     const data = { numberOfItems: 1 };
     try {
-      const response = await axios.get(`cart/read/${id}`, data, {
+      const response = await axios(`/carts/${id}`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
@@ -48,7 +48,7 @@ const CartProduct = () => {
  const handleDelete = async (id) => {
   console.log(id)
    try {
-     await axios.delete(`cart/removeProduct/${id}`, {
+     await axios.delete(`carts/delete/${id}`, {
        headers: {
          Authorization: `Bearer ${localStorage.getItem("token")}`,
        },
@@ -79,13 +79,13 @@ const CartProduct = () => {
           </tr>
 
           {localStorage.getItem("token") &&
-            cartsId.includes(loggedUser.id) &&
+            cartsId.includes(loggedUser._id) &&
             productInCard?.map((product) => {
               return (
                 <tr>
                   <td>
                     <img
-                      src={product.productImage}
+                      src={product.image}
                       alt="pimage"
                       className="img-min"
                     ></img>
@@ -105,7 +105,7 @@ const CartProduct = () => {
                        
                           
                           handleDelete(cartItems?.find(item=>  { 
-                            return item.productId==Number(product.id)})?.id
+                            return item.productId==(product._id)})?._id
 
                           )
                        

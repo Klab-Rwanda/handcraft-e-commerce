@@ -5,6 +5,7 @@ import { AuthContext } from "./AuthProvider";
 const ProtectAuthentication = ({ children }) => {
   const { loggedUser } = useContext(AuthContext);
   const navigate = useNavigate()
+  
   if (localStorage.getItem("token")) {
     if (!loggedUser) {
       return;
@@ -12,9 +13,9 @@ const ProtectAuthentication = ({ children }) => {
     else if (loggedUser?.roleId === 1) {
        console.log("pauline");
         navigate( "/AdminDashboard");
-     } else if (loggedUser?.roleId == 2) {
+     } else if (loggedUser?.roleId == 2 && loggedUser?.status == 'approved') {
         navigate( "/VendorDashboard");
-     } else if (loggedUser?.roleId == 3) {
+     } else if (loggedUser?.roleId == 3 || loggedUser?.status == 'pending') {
         navigate( "/");
      } else {
        // alert('role id not found');

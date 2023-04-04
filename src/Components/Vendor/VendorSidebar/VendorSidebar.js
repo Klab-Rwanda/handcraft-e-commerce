@@ -62,10 +62,10 @@ const VendorSidebar = () => {
           <h1 className="side-menu-text-h1">Sales</h1>
         </Link>
 
-        <Link to="./Transition" className="side-menu-single">
+        {/* <Link to="./Transition" className="side-menu-single">
           <TbTransitionBottom className="D-icon" id="icons" />
           <h1 className="side-menu-text-h1">Transitions</h1>
-        </Link>
+        </Link> */}
 
         <Link to="./Setting" className="side-menu-single">
           <AiFillSetting className="D-icon" id="icons" />

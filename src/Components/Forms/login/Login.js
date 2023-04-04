@@ -51,8 +51,8 @@ try{
     }
 catch (err){
 console.log(err.response);
-if(err.response.status=== 404){
-  Notify.failure(" password is incorrect");
+if(err.response){
+  // Notify.failure(" password is incorrect");
 
 }
 }
