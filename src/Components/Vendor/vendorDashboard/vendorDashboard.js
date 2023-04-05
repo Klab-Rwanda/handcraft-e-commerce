@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./vendorDashboard.css";
 import { Bar, Pie, Line } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
 
 const VendorDashboard = () => {
+  const [modal, setModal] = useState(false);
+  const { orders } = useContext(AuthContext);
+  console.log(orders);
+
   const pData = [
     {
       id: 1,
@@ -148,7 +153,7 @@ const VendorDashboard = () => {
             <FaSearch className="sear" />
           </div>
           <div className="dash-right">
-            <Link   to = "/">
+            <Link to="/">
               <p>Go to home</p>
             </Link>
           </div>
@@ -186,78 +191,34 @@ const VendorDashboard = () => {
             <h1>Recent Purchase</h1>
             <table className="table">
               <tr>
-                <th>
-                  <input type="checkbox" name="select" />
-                </th>
-                <th>ID</th> <th>Date</th>
-                <th>Product</th>
-                <th>Payment</th>
-                <th>Fulfillment</th>
-                <th>total</th>
+                <th>Date</th> <th>Customer</th>
+                <th>Purchases</th>
+                <th>Amount</th>
+                <th> Phone</th>
+                <th>Delivered</th>
               </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
-              <tr>
-                <td>
-                  <input type="checkbox" name="select" />{" "}
-                </td>
-                <td>001</td> <td>1/jan/2023</td> <td>dress</td> <td>pending</td>{" "}
-                <td>delivered</td> <td>10,000</td>
-              </tr>
+
+              {orders?.map((order) => {
+                return (
+                  <>
+                    <tr>
+                      <td>
+                        <p>{order.date}</p>
+                      </td>
+                      <td
+                        onClick={() => {
+                          setModal(true);
+                        }}
+                      >
+                        {order.customer.firstName}
+                      </td>{" "}
+                      <td>productOrd</td> <td>{order.totalAmount}</td>{" "}
+                      <td>{order.phoneNumber}</td> <td>{order.delivered}</td>
+                      <td>:</td>
+                    </tr>
+                  </>
+                );
+              })}
             </table>
           </div>
         </div>

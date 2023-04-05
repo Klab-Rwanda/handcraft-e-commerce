@@ -32,7 +32,7 @@ const AllProductContent = () => {
       <tr>
         <td>
           <img
-            src={product.productImage}
+            src={product.image}
             alt="pimage"
             className="img-min"
           ></img>

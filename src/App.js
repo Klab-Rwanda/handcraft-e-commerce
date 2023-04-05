@@ -35,6 +35,8 @@ import WishlistPage from './Pages/WishlistPage/WishlistPage';
 import CartPage from './Pages/CartPage/CartPage';
 
 import OneVender from "./Pages/OneVender/OneVender";
+import VendorManageContent from "./Components/Admin/vendorManageContent/VendorManageContent";
+import AdminVendor from "./Pages/AdminUsers/AdminVendor";
 
 
 const App = () => {
@@ -46,7 +48,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="Shop" element={<Shop />} />
           <Route path="Vender" element={<Vender />} />
-          <Route path="OneVender" element={<OneVender/>} />
+          <Route path="OneVender" element={<OneVender />} />
 
           <Route
             path="Login"
@@ -56,20 +58,24 @@ const App = () => {
               </ProtectAuthentication>
             }
           />
-          <Route path="Signup" element={
-          <ProtectAuthentication>
-            <Register />
+          <Route
+            path="Signup"
+            element={
+              <ProtectAuthentication>
+                <Register />
               </ProtectAuthentication>
-            } />
-          <Route path="Buy" element={<Buy />} />
+            }
+          />
+          {/* <Route path="Buy" element={<Buy />} /> */}
+          <Route path="/:productId" element={<Buy />} />
           <Route path="Cart" element={<Cart />} />
           <Route path="About" element={<About />} />
           <Route path="Contact" element={<Contact />} />
           <Route path="Payment" element={<Payment />} />
           <Route path="WishlistPage" element={<WishlistPage />} />
-          <Route path="CartPage" element={<CartPage/>} />
+          <Route path="CartPage" element={<CartPage />} />
           <Route path="Singlevender" element={<Singlevender />} />
-          <Route path="SingleProductview" element={<SingleProductview/>} />
+          <Route path="SingleProductview" element={<SingleProductview />} />
           <Route index element={<Home />} />
           <Route />
           <Route
@@ -90,6 +96,7 @@ const App = () => {
             <Route path="Adminsellerdetail" element={<Adminsellerdetail />} />
             <Route path="Adminsales" element={<Adminsales />} />
             <Route path="AdminLogout" element={<AdminLogout />} />
+            <Route path="AdminVendor" element={<AdminVendor/>} />
           </Route>
 
           <Route

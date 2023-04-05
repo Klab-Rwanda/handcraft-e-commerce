@@ -1,53 +1,75 @@
 import React, { useContext } from "react";
 import SallerDetailcontent from "../SallerDetailcontent/SallerDetailcontent";
 import "./UserManageConent.css";
-import { useState} from "react";
+import { useState } from "react";
 import { AuthContext } from "../../context/AuthProvider";
+import { AiFillDelete } from "react-icons/ai";
+import axios from "../../Axios/axios";
+import { Notify } from "notiflix";
 const UserManageConent = () => {
-  const[modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false);
 
-   const { allUsers } = useContext(AuthContext);
-   console.log(allUsers);
+  const { allUsers } = useContext(AuthContext);
+  console.log(allUsers);
 
+  const filteredUsers = allUsers?.filter(U=>U.roleId==3)
 
-    // const filteredUsers = allUser?.filter(U=>U.roleId==1 ||U.roleId == 2)
+  // console.log("PPO")
 
-// console.log("PPO")
-    
+   const handleDelete = async (id) => {
+     try {
+       await axios.delete(`users/delete/${id}`, {
+         headers: {
+           "content-Type": "multipart/form-data",
+           Authorization: `Bearer ${localStorage.getItem("token")}`,
+         },
+       });
+         Notify.success("user removed successfully");
+       
+       window.location.reload(true);
+     } catch (error) {
+       console.log(error.response);
+     }
+   };
+
   return (
     <div>
       <div className="user-boxx">
         <table className="table">
           <tr>
-            <th>
-              Profile
-            </th>
+            <th>Profile</th>
             <th>Names</th> <th>E-mail</th>
-            <th>Joined</th>
+            <th>Status</th>
             <th>Actions</th>
           </tr>
-         
-            {allUsers?.map((user) => {
-              return (
-                <>
-                 <tr>
+
+          {filteredUsers?.map((user) => {
+            return (
+              <>
+                <tr>
                   <td
                     onClick={() => {
                       setModal(true);
                     }}
                   >
-                   {user.profile}
+                    {user.firstName}
                   </td>
-                  <td>{user.firstName}</td> <td>{user.email}</td>
-                  
-                 <td>{user.createdAt}</td> <td>...</td>
-                
+                  <td>{user.lastName}</td> <td>{user.email}</td>
+                  <td>{user.status}</td>
+                  <td>
+                    <AiFillDelete
+                      className="delete-icn"
+                      onClick={() => {
+                        if (window.confirm("are you sure to delete this?")) {
+                          handleDelete(user._id);
+                        }
+                      }}
+                    />
+                  </td>
                 </tr>
-
-                </>
-              );
-            })}
-         
+              </>
+            );
+          })}
         </table>
       </div>
       <div className="user-next-cont">

@@ -1,0 +1,18 @@
+.vendormanage{
+    overflow-y:auto;
+
+}
+.status{
+    /* background-color: antiquewhite; */
+    display: flex;
+    gap:2rem;
+}
+.approve{
+    background-color: yellowgreen;
+    padding: 5px;
+}
+.delete{
+    background-color: rgb(226, 138, 138);
+    padding: 5px;
+
+}
