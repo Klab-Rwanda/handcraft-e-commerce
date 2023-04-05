@@ -11,10 +11,17 @@ import APEAL from "../../assets/appeal.jpg";
 import ING from "../../assets/ingo.jpg";
 import axios from "../../Components/Axios/axios";
 import { Notify } from "notiflix/build/notiflix-notify-aio";
+// import { useEffect } from "react";
+// import { useState } from "react";
 
-const ClothingPeal = () => {
+const ClothingPeal = (props) => {
   const { products } = useContext(AuthContext);
+ 
+
+
   console.log(products);
+
+ 
 
   const handleCart = async (id) => {
     const data = { numberOfItems: 1 };
@@ -34,16 +41,21 @@ const ClothingPeal = () => {
     }
   };
 
+
+
+
   return (
     <>
       <section id="clothing">
         <div className="container productheader">
           <h1>Clothing And Appeal</h1>
           <div className="moreProduct">
-            <h2>More Product</h2>
-            <span>
-              <MdArrowRightAlt />
-            </span>
+            <Link to="/Shop">
+              <h2>More Product</h2>
+              <span>
+                <MdArrowRightAlt />
+              </span>
+            </Link>
           </div>
         </div>
 
@@ -63,11 +75,12 @@ const ClothingPeal = () => {
               </button>
             </div>
           </div>
-          <div className="apealright">
+          <div className="apealright" >
             {products?.map((product) => {
               return (
                 <>
-                  <div className="proCards">
+                  <div
+                    className="proCards">
                     <img src={product.image} alt="" />
                     <div className="overview">
                       <ul>
@@ -83,7 +96,9 @@ const ClothingPeal = () => {
                           <AiOutlineHeart className="iconx" />
                         </li> */}
                         <li>
-                          <HiOutlineArrowNarrowRight className="iconx" />
+                          <Link  id="read"to={`${product._id}`}>
+                            <HiOutlineArrowNarrowRight className="iconx" />
+                          </Link>
                         </li>
                       </ul>
                     </div>

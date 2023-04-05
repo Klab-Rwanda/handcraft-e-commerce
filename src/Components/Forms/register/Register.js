@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import Footer from "../../Home/Footer/Footer";
 import SubHeader from "../../Home/SubHeader/SubHeader";
 import Header from "../../Home/Header/Header";
+import { Notify } from "notiflix";
 
 const REGISTER_URL = "/users/register";
 
@@ -45,6 +46,8 @@ export default function Register() {
 
       const accessToken = response?.data?.token;
       localStorage.setItem("token", accessToken);
+         Notify.success("registered successfully");
+
       window.location.reload(true);
       setSuccess(true);
       navigate("/login");

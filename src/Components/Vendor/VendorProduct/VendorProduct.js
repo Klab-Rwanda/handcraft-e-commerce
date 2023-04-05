@@ -8,6 +8,7 @@ import axios from "../../Axios/axios";
 import { AuthContext } from "../../context/AuthProvider";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { Notify } from "notiflix";
 
 const VendorProduct = () => {
   const [modal, setModal] = useState(false);
@@ -59,8 +60,10 @@ const VendorProduct = () => {
         );
         console.log(response);
 
-        alert("post successfully");
+        Notify.success("product updated  successfully");
         reset();
+   window.location.reload(true);
+
       } else {
         const response = await axios.post("/products", formData, {
         
@@ -72,8 +75,10 @@ const VendorProduct = () => {
 
         console.log(response);
 
-        alert("post successfully");
-        reset();
+         Notify.success("product added successfully");
+          reset();
+   window.location.reload(true);
+
       }
     } catch (err) {
       console.log(err.response);
@@ -98,6 +103,7 @@ const VendorProduct = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
+
       window.location.reload(true);
     } catch (error) {
       console.log(error.response);
@@ -194,7 +200,7 @@ const VendorProduct = () => {
                     <p>{product.productName}</p>
                   </td>
                   <td>{product.productCategory}</td>{" "}
-                  <td>{product.productDescription}</td>{" "}
+                  <td>{product.productDescription.slice(0, 10) + "..."}</td>{" "}
                   <td>{product.productPrice}</td>{" "}
                   <td>{product.productDiscount}</td>
                   <td>

@@ -10,7 +10,7 @@ const Buy = () => {
     <div>
       <Header/>
       <SubHeader/>
-      <h1 className='buy-page-header'> Product name Details </h1>
+      <h1 className='buy-page-header'> Product  Details </h1>
       <div className="buy-container">
       <BuyPage/>
         </div> 

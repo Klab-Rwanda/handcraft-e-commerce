@@ -9,10 +9,13 @@ export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
   const [loggedUser, setLoggedUser] = useState({});
   const [allUsers, setAllUsers] = useState({});
+  const [allVendors ,setAllVendor] = useState([]);
 
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([]);
   const [orders,setOrders]= useState([]);
+  const [product, setProduct] = useState(null);
+
 
   //  console.log(loggedUser.id);
   console.log(loggedUser);
@@ -25,7 +28,7 @@ export const AuthProvider = ({ children }) => {
         setLoggedUser(result.data.user);
       }
     } catch (err) {
-      console.log(err.response);
+      // console.log(err.response);
     }
   };
 
@@ -37,31 +40,51 @@ export const AuthProvider = ({ children }) => {
         },
       });
       console.log(data);
-      setAllUsers(data.data.Users);
+      setAllUsers(data.data.users);
     } catch (error) {
       console.log(error.response);
     }
 
   };
 
+ const FetchAllVendor = async () => {
+   try {
+     const data = await axios("/users/all/vendors", {
+       headers: {
+         Authorization: `Bearer ${localStorage.getItem("token")}`,
+       },
+     });
+     console.log(data.data.vendors);
+     setAllVendor(data.data.vendors);
+   } catch (error) {
+     console.log(error.response);
+   }
+ };
+
+
+
+
+
+
+
     const FetchCarts = async()=>{
       try{
   const data = await axios("carts",{
 
   });
-  console.log(data.data.carts);
+  // console.log(data.data.carts);
   setCartItems(data.data.carts);
 
       }
       catch(error){
-     console.log(error.response)
+    //  console.log(error.response)
       }
     };
 
   const fetchProducts = async () => {
     try {
       const data = await axios ("/products", {});
-      console.log(data.data.allProducts);
+      // console.log(data);
       setProducts(data.data.allProducts);
      
 
@@ -77,13 +100,25 @@ export const AuthProvider = ({ children }) => {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      console.log(data.data.orders);
+      // console.log(data.data.orders);
       setOrders(data.data.orders);
     } catch (err) {
       console.log(err.response);
     }
   };
 
+  //  const FetchSingleProduct = async (_id) => {
+  //    try {
+  //        const result = await axios(`/product/${id}`);
+  //        console.log(result);
+  //        setProduct(result.data.product);
+  //      }
+      
+     
+  //    catch (err) {
+  //      console.log(err.response);
+  //    }
+  //  };
 
 
 
@@ -98,7 +133,9 @@ export const AuthProvider = ({ children }) => {
     FetchUser();
     FetchAllUser();
     fetchProducts();
+    // FetchSingleProduct();
     FetchCarts();
+    FetchAllVendor();
     fetchOrders();
   }, [decodedToken]);
 
@@ -111,6 +148,8 @@ export const AuthProvider = ({ children }) => {
         products,
         orders,
         allUsers,
+        product,
+        allVendors,
         setAuth,
       }}
     >

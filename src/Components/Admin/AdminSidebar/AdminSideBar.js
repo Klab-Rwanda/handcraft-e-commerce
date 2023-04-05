@@ -23,8 +23,7 @@ const AdminSideBar = ({sider}) => {
 
   return (
     <div className={sider ? "sider-open" : "side"}>
-
-     <div className="side-profile">
+      <div className="side-profile">
         {localStorage.getItem("token") ? (
           <>
             <img
@@ -42,11 +41,6 @@ const AdminSideBar = ({sider}) => {
         )}
       </div>
 
-
-
-
-
-
       <div className="side-menu">
         <Link to="./" className="side-menu-single">
           <AiFillDashboard className="D-icon" />
@@ -57,6 +51,11 @@ const AdminSideBar = ({sider}) => {
           <MdOutlineManageAccounts className="D-icon" id="icons" />
           <h1 className="side-menu-text-h1">Manage</h1>
         </Link>
+        <Link to="./AdminVendor" className="side-menu-single">
+          <MdOutlineManageAccounts className="D-icon" id="icons" />
+          <h1 className="side-menu-text-h1">Vendors</h1>
+        </Link>
+
         <Link to="./Adminallproducts" className="side-menu-single">
           <GrProductHunt className="D-icon" id="icons" />
           <h1 className="side-menu-text-h1">Products</h1>
